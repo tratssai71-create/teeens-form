@@ -1309,6 +1309,57 @@ section.s.nums{background:linear-gradient(168deg,#CA0E15 0%,#AE0A11 54%,#8E060C 
   .fixed{background:rgba(255,255,255,.95)}
 }
 
+
+/* ══════════════════════════════════════════════════════
+   ファーストビューだけ全面動画に戻す
+   ページ全体は白ベースのまま。ここだけ映像の上に文字を乗せる。
+   ══════════════════════════════════════════════════════ */
+.fv{background:#0f0b0a!important;color:#fff;
+  min-height:648px;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 0 28px;position:relative;overflow:hidden}
+
+/* 動画：画面幅いっぱい（絶対配置で地に敷く） */
+.fv-video{order:0;position:absolute;inset:0;margin:0;height:auto;
+  border-radius:0;background:#0f0b0a}
+.fv-mov{opacity:1!important;object-fit:cover;object-position:center 26%}
+
+/* 文字を読ませるための幕。下を強く、上は軽く。 */
+.fv-scrim{display:block!important;position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(15,11,10,.52) 0%,
+    rgba(15,11,10,.08) 22%,
+    rgba(15,11,10,.30) 50%,
+    rgba(15,11,10,.86) 78%,
+    rgba(15,11,10,.97) 100%)}
+
+/* 文字は下に置く */
+.fv-in{order:1;position:relative;z-index:3;padding:0 22px 0}
+.fv-act{order:2;position:relative;z-index:3;margin:18px 16px 0;padding:0;border-top:0}
+.fv-eyebrow{color:#fff}
+.fv-eyebrow::before{background:var(--red)}
+.fv h1{color:#fff;font-size:37px;text-shadow:0 2px 20px rgba(0,0,0,.5)}
+.fv h1 em{color:#E60020}          /* Hondaのロゴ赤。暗い面ではこちらの方が読める */
+.fv p{color:rgba(255,255,255,.82);text-shadow:0 1px 12px rgba(0,0,0,.6)}
+
+/* 残り5名：暗い面に合わせたガラスのカード */
+.slot{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.24);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:0 8px 26px -14px rgba(0,0,0,.8)}
+.slot-tx b{color:#fff}
+.slot-tx small{color:rgba(255,255,255,.66)}
+.slot-n{border-left-color:rgba(255,255,255,.22)}
+.slot-n small{color:rgba(255,255,255,.66)}
+.slot-n b{color:#fff}
+.slot-n span{color:#fff}
+.slot-note{color:rgba(255,255,255,.56)}
+
+/* FVのボタン：LINEは緑、エントリーは白の枠 */
+.lk-sub{border:1.5px solid rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.06)}
+.lk-sub svg{stroke:#fff}
+
+/* ヘッダーはFVの上では透明、というのはSTUDIOで再現しづらいので
+   白帯のまま通す（映像の上に白帯が乗る形）。 */
+
 </style>
 </head>
 <body>
@@ -1358,13 +1409,14 @@ section.s.nums{background:linear-gradient(168deg,#CA0E15 0%,#AE0A11 54%,#8E060C 
   <div class="fv">
     <!-- 仮素材（Mixkitのフリー動画）。本番は御社の映像に差し替えること。 -->
     <div class="fv-video">
-      <!-- 確認用の仮素材（Mixkitのフリー動画・ご来店のお客様への接客シーン＝営業職）。
-           本番は先方の素材に差し替え、ファイルは自前で持つこと。 -->
+      <!-- 御社からご提供いただいた「募集訴求」の冒頭8秒。
+           ※テロップが焼き込まれているため、本番はテロップなしの書き出しに差し替えたい -->
       <video class="fv-mov" autoplay muted loop playsinline preload="metadata"
-             poster="" aria-hidden="true" data-clip="0,10">
-        <source src="https://assets.mixkit.co/videos/23476/23476-720.mp4" type="video/mp4">
+             poster="hero-poster.jpg" aria-hidden="true">
+        <source src="hero.mp4" type="video/mp4">
       </video>
-      <div class="glow fv-g1"></div>
+      <div class="fv-scrim"></div>
+    </div>
       <div class="glow fv-g2"></div>
       <div class="fv-sweep"></div>
     </div>
