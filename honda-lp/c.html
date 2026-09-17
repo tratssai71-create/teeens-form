@@ -725,6 +725,51 @@ section.s.nums{margin-top:-1px;margin-bottom:-1px}
 }
 
 
+
+/* ══════ PC：画面全体の背景に動画を敷く ══════════════
+   本体（412px）は手前に浮かせ、動画は左右の余白で見せる。
+   そのままだと本文と喧嘩するので、ぼかし・暗さ・彩度を落として
+   「空気」として扱う。方眼はその上に重ねて設計言語を保つ。
+   スマホでは読み込みもしない（JS側で出し分け）。            */
+.bg-stage{display:none}
+@media (min-width:1024px){
+  .bg-stage{display:block;position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  .bg-stage video{width:100%;height:100%;object-fit:cover;
+    filter:blur(4px) saturate(.6) brightness(.38);
+    transform:scale(1.06);
+    opacity:0;transition:opacity 1.4s ease}
+  .bg-stage video.on{opacity:1}
+  /* 中央を暗く落として、本体まわりを締める */
+  .bg-stage .tint{position:absolute;inset:0;
+    background:
+      radial-gradient(38% 60% at 50% 50%,rgba(8,8,11,.72),transparent 70%),
+      radial-gradient(60% 40% at 82% 6%,rgba(230,0,18,.16),transparent 62%),
+      linear-gradient(180deg,rgba(8,8,11,.5),rgba(8,8,11,.22) 40%,rgba(8,8,11,.68))}
+  /* 方眼は動画の上に重ねる */
+  .bg-stage .mesh{position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);
+    background-size:92px 92px}
+
+  /* 動画が乗ったら、周りを暗い側に振る */
+  body.has-bg{background:#0b0b0f;background-image:none}
+  body.has-bg .phone{
+    box-shadow:0 2px 6px rgba(0,0,0,.4),
+      0 22px 44px -12px rgba(0,0,0,.55),
+      0 70px 120px -34px rgba(0,0,0,.8);
+    outline-color:rgba(255,255,255,.14)}
+  body.has-bg .side-l .vt{color:rgba(255,255,255,.5)}
+  body.has-bg .side-l .rule{background:linear-gradient(180deg,var(--red),rgba(255,255,255,.18))}
+  body.has-bg .side-r .num{-webkit-text-stroke:1.5px rgba(255,255,255,.3)}
+  body.has-bg .side-r .nm{color:rgba(255,255,255,.62)}
+  body.has-bg .side-r .of{color:rgba(255,255,255,.4)}
+  body.has-bg .fixed{border-color:rgba(255,255,255,.14)}
+
+  .phone,.side{z-index:2}
+}
+@media (prefers-reduced-motion:reduce){ .bg-stage video{display:none} }
+
 /* ══════ PC表示：本文はスマホ幅のまま、左右を使う ══════
    カラムを広げるのをやめ、412pxのまま中央に置く。
    空いた左右には、版面の設計言語（方眼・赤の罫・通し番号・縦組み）を
@@ -886,6 +931,12 @@ section.s.nums{background:linear-gradient(172deg,#17171d 0%,#101014 100%)}
 
 <div class="draft">DESIGN DRAFT ／ デザイン案 <b>推し3 余白重視</b> ／ 株式会社TeeenS</div>
 
+
+<!-- PC表示のとき、画面全体の背景に流す動画 -->
+<div class="bg-stage" id="bgStage" aria-hidden="true">
+  <div class="tint"></div>
+  <div class="mesh"></div>
+</div>
 
 <!-- PC表示のとき、左右の余白に出るパーツ -->
 <div class="side side-l" aria-hidden="true">
@@ -1661,9 +1712,42 @@ document.querySelectorAll('.qa summary').forEach(function(s){
   if(v.readyState>=2) on();
   v.addEventListener('loadeddata',on);
   v.addEventListener('error',function(){ v.remove(); });
-  var pr=v.play&&v.play();
-  if(pr&&pr.catch) pr.catch(function(){});
+  kick(v);
 })();
+
+
+/* ══ PC：背景動画を敷く（スマホでは読み込まない）══════════ */
+(function(){
+  var stage=document.getElementById('bgStage');
+  if(!stage) return;
+  if(!window.matchMedia('(min-width:1024px)').matches) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var v=document.createElement('video');
+  v.muted=true; v.loop=true; v.autoplay=true; v.playsInline=true;
+  v.setAttribute('playsinline',''); v.preload='auto';
+  /* 確認用の仮素材。本番は先方の映像に差し替え、ファイルは自前で持つこと */
+  v.src='https://assets.mixkit.co/videos/13270/13270-720.mp4';
+  v.addEventListener('loadeddata',function(){
+    v.classList.add('on');
+    document.body.classList.add('has-bg');
+  });
+  v.addEventListener('error',function(){ v.remove(); });
+  stage.insertBefore(v, stage.firstChild);
+  kick(v);
+})();
+
+/* 自動再生が止められた／タブが裏に回った場合に、再生し直す */
+function kick(v){
+  var t=function(){ var p=v.play&&v.play(); if(p&&p.catch) p.catch(function(){}); };
+  t();
+  document.addEventListener('visibilitychange',function(){
+    if(document.visibilityState==='visible' && v.paused) t();
+  });
+  ['pointerdown','keydown','touchstart'].forEach(function(e){
+    window.addEventListener(e,function h(){ if(v.paused) t(); }, {once:false,passive:true});
+  });
+}
 
 </script>
 </body>
