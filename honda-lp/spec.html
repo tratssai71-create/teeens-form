@@ -121,7 +121,7 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
   <tr><td><span class="sw" style="background:#ffffff"></span>白</td><td>FV／選ばれる理由／募集職種／よくある質問</td></tr>
   <tr><td><span class="sw" style="background:#f7f4f2"></span>うすいグレー</td><td>待遇と条件／インタビュー／選考の流れ／途中のLINE導線</td></tr>
   <tr><td><span class="sw" style="background:#CA0E15"></span>赤ベタ</td><td><b>数字で見る</b>／<b>最終CTA</b> の2面だけ</td></tr>
-  <tr><td><span class="sw" style="background:#231815"></span>黒ベタ</td><td><b>フッターのみ</b></td></tr>
+  <tr><td><span class="sw" style="background:#231815"></span>黒ベタ</td><td><b>ファーストビュー（全面動画）</b>と<b>フッター</b></td></tr>
 </table>
 
 <div class="note">
@@ -193,31 +193,41 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
 <p>ドロワーの地は<b>白98%</b>。日本語 <code>19px</code>／Bold／<b>黒</b>。英字 <code>9.5px</code>／Bold／赤 <code>#E60012</code>／字間 <code>0.16em</code>。
 各項目の下に白12%の罫線。下にボタン2つ（間隔9px）。</p>
 
-<h2><span class="n">04</span>ファーストビュー</h2>
+<h2><span class="n">04</span>ファーストビュー <span class="tag">全面動画</span></h2>
 <div class="note ok">
-  <b>並び順が変わりました。</b>
-  見出し → 動画 → 残り5名＋ボタン、の縦並びです。動画は全面に敷かず、
-  <b>左右16pxを空けた角丸のボックスに収めます</b>。
+  <b>ここだけ黒い面です。</b>御社提供の動画を画面幅いっぱいに敷き、その上に白い文字を乗せます。
+  ページのほかの部分は白ベースのままです。
 </div>
 <table>
   <tr><th>項目</th><th>値</th></tr>
-  <tr><td>地</td><td><b>白</b>（上の余白 <code>60px</code>／下 <code>34px</code>）</td></tr>
-  <tr><td>小見出し</td><td>「2027年度 新卒採用」<b>赤 <code>#CA0E15</code></b>／短い赤い線＋<code>11px</code> Bold</td></tr>
-  <tr><td>大見出し</td><td><code>36px</code>／Black(900)／行間 <code>1.24</code>／字間 <code>-0.02em</code>／<b>黒 <code>#231815</code></b><br>「中四国で、<span style="color:var(--red)">Honda</span>と働く。」— <b>Hondaだけ赤</b></td></tr>
-  <tr><td>説明文</td><td><code>13.5px</code>／行間 <code>1.8</code>／<code>#5c5450</code></td></tr>
-  <tr><td>動画</td><td>高さ <code>252px</code>／左右 <code>16px</code> の余白／<b>角丸 <code>18px</code></b>／自動再生・ループ・ミュート</td></tr>
-  <tr><td>ボタン</td><td>高さ <code>46px</code>／角丸 <code>14px</code>／<code>13.5px</code> Bold<br>①LINE緑 <code>#06C755</code>　②<b>白地＋赤の枠線1.5px＋赤文字</b></td></tr>
+  <tr><td>高さ</td><td><code>768px</code>（下の余白 <code>28px</code>／文字は下寄せ）</td></tr>
+  <tr><td>動画</td><td>全面に敷く（ボックスの背景動画／自動再生・ループ・ミュート）<br>表示位置は<b>上から18%</b>の位置に寄せる</td></tr>
+  <tr><td>幕</td><td>動画の上に重ねる縦グラデーション。<b>上は薄く、画面の44%あたりから一気に濃く</b><br>
+      <code>rgba(15,11,10,.42)</code> 0% → <code>.06</code> 16% → <code>.14</code> 30% →
+      <code>.66</code> 44% → <code>.90</code> 58% → <code>.99</code> 100%</td></tr>
+  <tr><td>小見出し</td><td>「2027年度 新卒採用」<b>白</b>／赤い短い線＋<code>11px</code> Bold</td></tr>
+  <tr><td>大見出し</td><td><code>37px</code>／Black(900)／行間 <code>1.24</code>／<b>白</b><br>
+      「中四国で、Hondaと働く。」— <b>Hondaだけ <code>#E60020</code>（ロゴの赤）</b></td></tr>
+  <tr><td>説明文</td><td><code>13px</code>／行間 <code>1.75</code>／白82%</td></tr>
+  <tr><td>ボタン</td><td>高さ <code>46px</code>／角丸 <code>14px</code><br>①LINE緑 <code>#06C755</code>　②<b>白の枠線＋白文字</b></td></tr>
 </table>
+
+<div class="note">
+  <b>いまの素材にはテロップが焼き込まれています。</b>
+  画面の38〜48%の位置に「どこの自動車ディーラーに就職するか迷っているアナタ！」が出るため、
+  こちらの文字はその下（画面の55%以降）にまとめ、幕を濃くして干渉を避けています。
+  <b>テロップなしの書き出しをもらえれば、幕を薄くして映像をもっと見せられます。</b>
+</div>
 
 <h3>残り5名のカード</h3>
 <table>
   <tr><th>項目</th><th>値</th></tr>
   <tr><td>サイズ</td><td>幅いっぱい × 高さ <code>58px</code></td></tr>
-  <tr><td>背景・枠</td><td><b>白</b> ＋ 罫線 <code>#e7e1dd</code> ＋ やわらかい影</td></tr>
+  <tr><td>背景・枠</td><td>白 <code>10%</code> ＋ 白 <code>24%</code> の枠線 ＋ 背景のぼかし（映像の上のガラス）</td></tr>
   <tr><td>角丸</td><td><code>15px</code>／左端に赤 <code>#E60012</code> の縦線 <code>3px</code></td></tr>
-  <tr><td>中身</td><td>赤い丸 <code>7px</code>／「オンライン個別面談」<code>12.5px</code> Bold <b>黒</b>／<br>下に「選考ではありません。話を聞くだけでOK」<code>10px</code> <code>#968f8a</code></td></tr>
-  <tr><td>右側</td><td>罫線で区切り／「残り」<code>10px</code>＋「<b>5</b>」<code>30px</code> Bold <b>赤</b>＋「名」<code>11.5px</code> 黒</td></tr>
-  <tr><td>下の注記</td><td>「※ 先着順・今月の受付枠です」<code>10px</code> <code>#968f8a</code></td></tr>
+  <tr><td>中身</td><td>赤い丸 <code>7px</code>／「オンライン個別面談」<code>12.5px</code> Bold <b>白</b>／<br>下に「選考ではありません。話を聞くだけでOK」<code>10px</code> 白66%</td></tr>
+  <tr><td>右側</td><td>白22%の縦線で区切り／「残り」<code>10px</code>＋「<b>5</b>」<code>30px</code> Bold <b>白</b>＋「名」<code>11.5px</code> 白</td></tr>
+  <tr><td>下の注記</td><td>「※ 先着順・今月の受付枠です」<code>9.5px</code> 白56%</td></tr>
 </table>
 <div class="note">
   <b>「今月の受付枠」は仮の文言です。</b> 事実と違うと問題になるので、先方に確認してから公開してください。
