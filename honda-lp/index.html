@@ -768,6 +768,22 @@ section.s.nums{margin-top:-1px;margin-bottom:-1px}
 @media (prefers-reduced-motion:reduce){ .bg-stage video{display:none} }
 
 
+
+/* QRコードはPCのときだけ出す（スマホはボタンから直接LINEへ飛ばす） */
+@media (max-width:1023px){ .qr{display:none} }
+
+/* ── 途中に挟むLINE導線 ────────────────────────── */
+.line-cut{margin:0;padding:38px 22px;position:relative;
+  background:linear-gradient(160deg,#0f1a12,#0b0d0b);color:#fff;overflow:hidden}
+.line-cut .in{position:relative;z-index:1;max-width:412px;margin:0 auto}
+.line-cut .k{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;
+  letter-spacing:.2em;color:#4ade80;margin-bottom:12px}
+.line-cut .k::before{content:'';width:18px;height:2px;background:#4ade80}
+.line-cut h3{font-size:19px;font-weight:800;line-height:1.55;margin-bottom:8px}
+.line-cut p{font-size:12.5px;color:rgba(255,255,255,.66);margin-bottom:18px}
+.line-cut .btn{width:100%}
+@media (min-width:1024px){ .line-cut{padding:52px 22px} }
+
 /* ── 右の余白：セクションごとの番号（ページと一緒に流れる）── */
 .sec-rail{display:none}
 @media (min-width:1024px){
@@ -1056,7 +1072,7 @@ section.s.nums::after{-webkit-text-stroke:0;color:rgba(255,255,255,.1)}
         <div class="fv-links">
           <a class="lk lk-line" href="#">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.64.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.036.194-.36.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-            LINEで相談する
+            まずは気軽に個別面談
           </a>
           <a class="lk lk-sub" href="#">エントリー
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -1071,7 +1087,7 @@ section.s.nums::after{-webkit-text-stroke:0;color:rgba(255,255,255,.1)}
     <div class="s-rule"></div>
     <div class="lab">ABOUT US</div>
     <h2 class="t">6県で、<em>108店舗</em>。<br>地域のカーライフを支える。</h2>
-    <p class="body">ホンダモビリティ中四国は、中四国エリアでHondaの正規ディーラーを展開しています。クルマの販売から点検・整備、保険まで。地域のお客様の毎日に、いちばん近いところで関わる仕事です。</p>
+    <p class="body">ホンダモビリティ中四国は、中四国エリアでHondaの正規ディーラーを展開しています。クルマの販売から点検・整備、保険まで。地域のお客様の毎日に、いちばん近いところで関わる仕事です。Hondaの正規ディーラーとして、中四国で最大規模の販売網を持つグループです。</p>
     <div class="ph-box r-16x9" style="margin-top:20px">
       <span class="pt">画像予定</span>
       <span class="pd">店舗外観、またはショールーム内の様子</span>
@@ -1202,6 +1218,17 @@ section.s.nums::after{-webkit-text-stroke:0;color:rgba(255,255,255,.1)}
     </div>
   </section>
 
+  <!-- 途中のLINE導線 -->
+  <div class="line-cut">
+    <div class="in">
+      <span class="k">LINE</span>
+      <h3>気になることは、<br>LINEで聞けます。</h3>
+      <p>選考前の情報収集だけでも構いません。エントリーの前に、働き方や仕事内容を気軽に聞いてみてください。</p>
+      <a class="btn btn-line" href="#"><svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.64.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.036.194-.36.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg><span class="lbl">採用情報をLINEで受け取る<small>友だち追加はこちら</small></span></a>
+    </div>
+  </div>
+
+
   <!-- 職種 -->
   <section class="s">
     <div class="s-rule"></div>
@@ -1229,7 +1256,8 @@ section.s.nums::after{-webkit-text-stroke:0;color:rgba(255,255,255,.1)}
         </div>
       </div>
     </div>
-    <a class="more" href="#">募集要項を見る<span>→</span></a>
+    <a class="more" href="#">詳しい募集要項を見る<span>→</span></a>
+    <p class="cap-n">※ 別ページ、または公式の採用ページへ遷移します</p>
   </section>
 
 
@@ -1429,7 +1457,19 @@ section.s.nums::after{-webkit-text-stroke:0;color:rgba(255,255,255,.1)}
       <button class="tab" role="tab" aria-selected="false" data-p="高知">高知</button>
     </div>
     <div class="shoplist" id="shoplist"></div>
+    <p class="cap-n">※ 店舗名を押すと、公式サイトの店舗ページへ移動します</p>
   </section>
+
+  <!-- 途中のLINE導線 -->
+  <div class="line-cut">
+    <div class="in">
+      <span class="k">LINE</span>
+      <h3>気になることは、<br>LINEで聞けます。</h3>
+      <p>選考前の情報収集だけでも構いません。エントリーの前に、働き方や仕事内容を気軽に聞いてみてください。</p>
+      <a class="btn btn-line" href="#"><svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.64.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.036.194-.36.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg><span class="lbl">採用情報をLINEで受け取る<small>友だち追加はこちら</small></span></a>
+    </div>
+  </div>
+
 
   <!-- インタビュー -->
   <section class="s">
@@ -1441,17 +1481,22 @@ section.s.nums::after{-webkit-text-stroke:0;color:rgba(255,255,255,.1)}
       <div class="vid">
         <div class="ph">画像予定 ／ 動画サムネイル</div><div class="play"></div>
         <span class="badge">Instagram</span>
-        <div class="cap">営業ってノルマ、ありますか？</div>
+        <div class="cap">社内の雰囲気ってどんな感じですか？</div>
       </div>
       <div class="vid">
         <div class="ph">画像予定 ／ 動画サムネイル</div><div class="play"></div>
         <span class="badge">TikTok</span>
-        <div class="cap">社内の雰囲気ってどんな感じ？</div>
+        <div class="cap">同期との関係はどうですか？</div>
       </div>
       <div class="vid">
         <div class="ph">画像予定 ／ 動画サムネイル</div><div class="play"></div>
         <span class="badge">Instagram</span>
-        <div class="cap">クルマの知識、必要でしたか？</div>
+        <div class="cap">営業ってノルマがありますか？</div>
+      <div class="vid">
+        <div class="ph">画像予定 ／ 動画サムネイル</div><div class="play"></div>
+        <span class="badge">Instagram</span>
+        <div class="cap">クルマやHondaの専門知識は必要ですか？</div>
+      </div>
       </div>
     </div>
   </section>
@@ -1488,11 +1533,23 @@ section.s.nums::after{-webkit-text-stroke:0;color:rgba(255,255,255,.1)}
         <div class="a">はい。多くの先輩が知識ゼロで入社しています。入社後の研修と、先輩社員のサポートがあります。</div>
       </details>
       <details class="qa">
+        <summary><button type="button"><span class="q">Q</span>配属先や勤務地はどのように決まりますか？<span class="mk"></span></button></summary>
+        <div class="a">（回答は先方に確認のうえ掲載）</div>
+      </details>
+      <details class="qa">
+        <summary><button type="button"><span class="q">Q</span>転勤はありますか？<span class="mk"></span></button></summary>
+        <div class="a">（回答は先方に確認のうえ掲載）</div>
+      </details>
+      <details class="qa">
         <summary><button type="button"><span class="q">Q</span>営業職に個人ノルマはありますか？<span class="mk"></span></button></summary>
         <div class="a">（回答は先方に確認のうえ掲載）</div>
       </details>
       <details class="qa">
-        <summary><button type="button"><span class="q">Q</span>配属先や勤務地はどう決まりますか？<span class="mk"></span></button></summary>
+        <summary><button type="button"><span class="q">Q</span>入社後の研修について教えてください<span class="mk"></span></button></summary>
+        <div class="a">（回答は先方に確認のうえ掲載）</div>
+      </details>
+      <details class="qa">
+        <summary><button type="button"><span class="q">Q</span>選考前に社員の方と話すことはできますか？<span class="mk"></span></button></summary>
         <div class="a">（回答は先方に確認のうえ掲載）</div>
       </details>
       <details class="qa">
@@ -1532,7 +1589,7 @@ section.s.nums::after{-webkit-text-stroke:0;color:rgba(255,255,255,.1)}
     </div>
     <div class="qr">
       <div class="box">QRコード</div>
-      <div class="tx">パソコンでご覧の方は、<br>スマートフォンで読み取ってください。</div>
+      <div class="tx"><b style="color:#fff">スマートフォンで読み取り</b><br>採用公式LINEの友だち追加ページへ移動します。</div>
     </div>
   </div>
 
@@ -1775,6 +1832,40 @@ function kick(v){
   });
 }
 
+</script>
+
+<!-- ══ 計測タグの受け口 ══════════════════════════════
+     依頼文にあった Googleアナリティクス・Metaピクセル・
+     ボタン別のクリック計測を、あとで差し込めるようにしてある。
+     公開前に測定IDを入れて、コメントを外すこと。
+Googleアナリティクスは、GA4で発行される測定ID入りのコードをそのまま貼り付ける。
+Metaピクセルは、Meta側で発行されるコードをそのまま貼り付ける。
+-->
+<script>
+/* どのボタンから申し込まれたかを数えるための下ごしらえ。
+   計測タグを入れたら、下のsendの中身を gtag / fbq の呼び出しに差し替える。 */
+(function(){
+  function label(a){
+    if(a.closest('.fixed'))     return '下部固定バー';
+    if(a.closest('.fv'))        return 'ファーストビュー';
+    if(a.closest('.line-cut'))  return '途中のLINE導線';
+    if(a.closest('.last'))      return '最下部';
+    if(a.closest('.drawer'))    return 'メニュー内';
+    return 'その他';
+  }
+  function send(kind, place){
+    /* 例）gtag('event','cta_click',{cta:kind, place:place});
+           fbq('trackCustom','CTAClick',{cta:kind, place:place});        */
+    if(window.console) console.log('[計測]', kind, '／', place);
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a.btn, a.lk');
+    if(!a) return;
+    var kind = a.classList.contains('btn-line')||a.classList.contains('lk-line') ? 'LINE登録'
+             : a.classList.contains('btn-red') ? 'エントリー' : 'その他';
+    send(kind, label(a));
+  }, true);
+})();
 </script>
 </body>
 </html>
