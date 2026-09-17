@@ -1315,7 +1315,7 @@ section.s.nums{background:linear-gradient(168deg,#CA0E15 0%,#AE0A11 54%,#8E060C 
    ページ全体は白ベースのまま。ここだけ映像の上に文字を乗せる。
    ══════════════════════════════════════════════════════ */
 .fv{background:#0f0b0a!important;color:#fff;
-  min-height:712px;display:flex;flex-direction:column;justify-content:flex-end;
+  min-height:768px;display:flex;flex-direction:column;justify-content:flex-end;
   padding:0 0 28px;position:relative;overflow:hidden}
 
 /* 動画：画面幅いっぱい（絶対配置で地に敷く） */
@@ -1360,6 +1360,14 @@ section.s.nums{background:linear-gradient(168deg,#CA0E15 0%,#AE0A11 54%,#8E060C 
 /* FVのボタン：LINEは緑、エントリーは白の枠 */
 .lk-sub{border:1.5px solid rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.06)}
 .lk-sub svg{stroke:#fff}
+
+
+/* 素材のテロップ（画面の44%あたり）より下に文字をまとめる */
+.fv h1{margin-bottom:12px}
+.fv p{font-size:13px;line-height:1.75}
+.fv-act{margin-top:14px}
+.fv .slot-note{font-size:9.5px;margin:0 0 10px 2px}
+.fv .fv-links{gap:8px}
 
 /* ヘッダーはFVの上では透明、というのはSTUDIOで再現しづらいので
    白帯のまま通す（映像の上に白帯が乗る形）。 */
