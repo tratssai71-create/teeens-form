@@ -9,7 +9,7 @@
 <style>
 :root{
   --bg:#f5f4f2; --panel:#ffffff; --ink:#1a1a1c; --ink2:#55555c; --ink3:#8d8d96;
-  --line:#e4e2df; --red:#E60012; --green:#06C755; --code:#f0eeeb; --accent:#1a1a1c;
+  --line:#e4e2df; --red:#CA0E15; --green:#06C755; --code:#f0eeeb; --accent:#1a1a1c;
 }
 @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
   --bg:#141416; --panel:#1c1c1f; --ink:#f0f0f2; --ink2:#a9a9b2; --ink3:#77777f;
@@ -77,7 +77,7 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
 <header class="top">
   <div class="eyebrow">HONDA MOBILITY CHUSHIKOKU / RECRUIT 2027</div>
   <h1>STUDIO 制作メモ</h1>
-  <p>モックアップから実測した数値です。STUDIOの無料プラン前提。公開目標 9/23（水）。</p>
+  <p>モックアップから実測した数値です。STUDIOの無料プラン前提。公開目標 9/23（水）。<br><b>配色を白ベース×赤多め×黒すこしに変更しました（9/17更新）。</b></p>
 </header>
 
 <h2><span class="n">00</span>先に決まっていること</h2>
@@ -100,18 +100,34 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
 </table>
 
 <h3>色</h3>
+<p class="lead">公式サイトのCSSを実測した値です。<b>白ベース・赤多め・黒すこし。</b></p>
 <table>
-  <tr><th>役割</th><th>値</th></tr>
-  <tr><td>赤（Honda）</td><td><span class="sw" style="background:#E60012"></span><code>#E60012</code></td></tr>
-  <tr><td>黒（濃い面）</td><td><span class="sw" style="background:#101014"></span><code>#101014</code></td></tr>
-  <tr><td>本文</td><td><span class="sw" style="background:#141414"></span><code>#141414</code></td></tr>
-  <tr><td>薄い本文</td><td><span class="sw" style="background:#5a5a5e"></span><code>#5a5a5e</code></td></tr>
-  <tr><td>注記</td><td><span class="sw" style="background:#9a9aa0"></span><code>#9a9aa0</code></td></tr>
-  <tr><td>罫線・枠</td><td><span class="sw" style="background:#e6e6e8"></span><code>#e6e6e8</code></td></tr>
-  <tr><td>ページ背景（スマホ）</td><td><span class="sw" style="background:#e9e9ec"></span><code>#e9e9ec</code></td></tr>
-  <tr><td>ページ背景（PCの左右）</td><td><span class="sw" style="background:#0d0d11"></span><code>#0d0d11</code></td></tr>
-  <tr><td>LINE緑</td><td><span class="sw" style="background:#06C755"></span><code>#06C755</code></td></tr>
+  <tr><th>役割</th><th>値</th><th>使う場所</th></tr>
+  <tr><td>赤（Honda）</td><td><span class="sw" style="background:#CA0E15"></span><code>#CA0E15</code></td><td>数字／最終CTAの面、アクセント全般</td></tr>
+  <tr><td>赤（濃い側）</td><td><span class="sw" style="background:#8E060C"></span><code>#8E060C</code></td><td>赤い面のグラデーション下端</td></tr>
+  <tr><td>黒（文字）</td><td><span class="sw" style="background:#231815"></span><code>#231815</code></td><td>本文・見出し・フッターの面</td></tr>
+  <tr><td>薄い文字</td><td><span class="sw" style="background:#5c5450"></span><code>#5c5450</code></td><td>説明文</td></tr>
+  <tr><td>注記</td><td><span class="sw" style="background:#968f8a"></span><code>#968f8a</code></td><td>※注記・キャプション</td></tr>
+  <tr><td>罫線</td><td><span class="sw" style="background:#e7e1dd"></span><code>#e7e1dd</code></td><td>カードの枠・区切り線</td></tr>
+  <tr><td>うすいグレー</td><td><span class="sw" style="background:#f7f4f2"></span><code>#f7f4f2</code></td><td>交互に敷くセクションの地</td></tr>
+  <tr><td>白</td><td><span class="sw" style="background:#ffffff"></span><code>#ffffff</code></td><td>本体の地・カード</td></tr>
+  <tr><td>PCの左右</td><td><span class="sw" style="background:#efeae6"></span><code>#efeae6</code></td><td>背景（後日決める）</td></tr>
+  <tr><td>LINE緑</td><td><span class="sw" style="background:#06C755"></span><code>#06C755</code></td><td>LINEボタンのみ</td></tr>
 </table>
+
+<h3>面の配分</h3>
+<table>
+  <tr><th>面</th><th>どこ</th></tr>
+  <tr><td><span class="sw" style="background:#ffffff"></span>白</td><td>FV／選ばれる理由／募集職種／よくある質問</td></tr>
+  <tr><td><span class="sw" style="background:#f7f4f2"></span>うすいグレー</td><td>待遇と条件／インタビュー／選考の流れ／途中のLINE導線</td></tr>
+  <tr><td><span class="sw" style="background:#CA0E15"></span>赤ベタ</td><td><b>数字で見る</b>／<b>最終CTA</b> の2面だけ</td></tr>
+  <tr><td><span class="sw" style="background:#231815"></span>黒ベタ</td><td><b>フッターのみ</b></td></tr>
+</table>
+
+<div class="note">
+  <b>赤い面は角丸22px・左右10pxの余白</b>を空けて「浮いた板」にします。
+  白い面から赤い板が現れる形なので、ベタ塗りを全面に流すより白が生きます。
+</div>
 
 <h3>共通の数値</h3>
 <table>
@@ -122,7 +138,8 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
   <tr><td>角丸：タブ・チップ</td><td><code>999px</code>（完全な丸）</td></tr>
   <tr><td>見出し h2</td><td><code>25px</code> ／ Black(900) ／ 行間 <code>1.42</code> ／ 字間 <code>-0.005em</code></td></tr>
   <tr><td>本文</td><td><code>13.5px</code> ／ Regular ／ 行間 <code>1.8</code></td></tr>
-  <tr><td>中見出し（統合部分）</td><td><code>19px</code> ／ Bold ／ 上に余白34・線からの間隔22・上罫線1px</td></tr>
+  <tr><td>中見出し（統合部分）</td><td><code>19px</code> ／ Bold ／ 上に余白34・線からの間隔22・上罫線1px<br><b>上罫線の左端に赤い線（幅44px・太さ3px）を重ねる</b></td></tr>
+  <tr><td><b>見出しの上の赤い線</b></td><td>各セクションの h2 の上に <b>幅30px・太さ3px・赤</b>／下に余白16px</td></tr>
 </table>
 
 <div class="note">
@@ -151,11 +168,11 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
   <tr><th>項目</th><th>値</th></tr>
   <tr><td>配置</td><td>固定／上0・左0・右0／最大幅 <code>412px</code> 中央寄せ／最前面</td></tr>
   <tr><td>高さ</td><td><code>50px</code>（内側の余白 上下10・左右16）</td></tr>
-  <tr><td>背景</td><td><code>#0d0d11</code> の不透明度 <code>78%</code> ＋ 背景のぼかし</td></tr>
+  <tr><td>背景</td><td><b>白 <code>94%</code></b> ＋ 背景のぼかし／<b>下端に赤 <code>#CA0E15</code> の線 2px</b></td></tr>
   <tr><td>並び</td><td>横並び・両端揃え</td></tr>
-  <tr><td>ロゴ</td><td>白抜き版・高さ <code>18px</code>（幅は自動）</td></tr>
-  <tr><td>SNS</td><td><code>30×30</code> の箱にアイコン <code>16.5px</code>／不透明度 <code>78%</code>／間隔2px</td></tr>
-  <tr><td>ハンバーガー</td><td><code>32×30</code>／線の太さ <code>1.6px</code>／長さ 18・12・18／間隔 <code>4.5px</code></td></tr>
+  <tr><td>ロゴ</td><td><b>通常版（黒文字）</b>・高さ <code>18px</code>（幅は自動）</td></tr>
+  <tr><td>SNS</td><td><code>30×30</code> の箱にアイコン <code>16.5px</code>／<b>色は黒 <code>#231815</code></b>／間隔2px</td></tr>
+  <tr><td>ハンバーガー</td><td><code>32×30</code>／線の太さ <code>1.6px</code>／長さ 18・12・18／間隔 <code>4.5px</code>／<b>黒</b></td></tr>
 </table>
 <div class="note">
   <b>開閉はSTUDIOのクリック動作で。</b> 線が×に変形するアニメーションは作り込まず、
@@ -173,28 +190,34 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
   <tr><td><code>FAQ</code></td><td>よくある質問</td></tr>
   <tr><td><code>FLOW</code></td><td>選考の流れ</td></tr>
 </table>
-<p>日本語 <code>19px</code>／Bold／白。英字 <code>9.5px</code>／Bold／赤 <code>#E60012</code>／字間 <code>0.16em</code>。
+<p>ドロワーの地は<b>白98%</b>。日本語 <code>19px</code>／Bold／<b>黒</b>。英字 <code>9.5px</code>／Bold／赤 <code>#E60012</code>／字間 <code>0.16em</code>。
 各項目の下に白12%の罫線。下にボタン2つ（間隔9px）。</p>
 
 <h2><span class="n">04</span>ファーストビュー</h2>
+<div class="note ok">
+  <b>並び順が変わりました。</b>
+  見出し → 動画 → 残り5名＋ボタン、の縦並びです。動画は全面に敷かず、
+  <b>左右16pxを空けた角丸のボックスに収めます</b>。
+</div>
 <table>
   <tr><th>項目</th><th>値</th></tr>
-  <tr><td>背景</td><td>動画（自動再生・ループ・ミュート）＋ 上から暗いグラデーション</td></tr>
-  <tr><td>小見出し</td><td>「2027年度 新卒採用」赤い短い線＋<code>11px</code>／Bold／字間広め</td></tr>
-  <tr><td>大見出し</td><td><code>38px</code>／Black(900)／行間 <code>1.24</code>／字間 <code>-0.02em</code>／白<br>「中四国で、<span style="color:var(--red)">Honda</span>と働く。」— Hondaだけ赤</td></tr>
-  <tr><td>説明文</td><td><code>13.5px</code>／行間 <code>1.8</code>／白 <code>75%</code></td></tr>
-  <tr><td>ボタン</td><td>高さ <code>46px</code>／角丸 <code>14px</code>／左右の余白 <code>18px</code>／<code>13.5px</code> Bold<br>①LINE緑 <code>#06C755</code>　②白い枠線 <code>32%</code>＋透明</td></tr>
+  <tr><td>地</td><td><b>白</b>（上の余白 <code>60px</code>／下 <code>34px</code>）</td></tr>
+  <tr><td>小見出し</td><td>「2027年度 新卒採用」<b>赤 <code>#CA0E15</code></b>／短い赤い線＋<code>11px</code> Bold</td></tr>
+  <tr><td>大見出し</td><td><code>36px</code>／Black(900)／行間 <code>1.24</code>／字間 <code>-0.02em</code>／<b>黒 <code>#231815</code></b><br>「中四国で、<span style="color:var(--red)">Honda</span>と働く。」— <b>Hondaだけ赤</b></td></tr>
+  <tr><td>説明文</td><td><code>13.5px</code>／行間 <code>1.8</code>／<code>#5c5450</code></td></tr>
+  <tr><td>動画</td><td>高さ <code>252px</code>／左右 <code>16px</code> の余白／<b>角丸 <code>18px</code></b>／自動再生・ループ・ミュート</td></tr>
+  <tr><td>ボタン</td><td>高さ <code>46px</code>／角丸 <code>14px</code>／<code>13.5px</code> Bold<br>①LINE緑 <code>#06C755</code>　②<b>白地＋赤の枠線1.5px＋赤文字</b></td></tr>
 </table>
 
 <h3>残り5名のカード</h3>
 <table>
   <tr><th>項目</th><th>値</th></tr>
   <tr><td>サイズ</td><td>幅いっぱい × 高さ <code>58px</code></td></tr>
-  <tr><td>背景・枠</td><td>白 <code>8%</code> ＋ 白 <code>20%</code> の枠線 ＋ ぼかし</td></tr>
+  <tr><td>背景・枠</td><td><b>白</b> ＋ 罫線 <code>#e7e1dd</code> ＋ やわらかい影</td></tr>
   <tr><td>角丸</td><td><code>15px</code>／左端に赤 <code>#E60012</code> の縦線 <code>3px</code></td></tr>
-  <tr><td>中身</td><td>赤い丸 <code>7px</code>／「オンライン個別面談」<code>12.5px</code> Bold／<br>下に「選考ではありません。話を聞くだけでOK」<code>10px</code> 白62%</td></tr>
-  <tr><td>右側</td><td>白18%の縦線で区切り／「残り」<code>10px</code>＋「<b>5</b>」<code>30px</code> Bold＋「名」<code>11.5px</code></td></tr>
-  <tr><td>下の注記</td><td>「※ 先着順・今月の受付枠です」<code>10px</code> 白50%</td></tr>
+  <tr><td>中身</td><td>赤い丸 <code>7px</code>／「オンライン個別面談」<code>12.5px</code> Bold <b>黒</b>／<br>下に「選考ではありません。話を聞くだけでOK」<code>10px</code> <code>#968f8a</code></td></tr>
+  <tr><td>右側</td><td>罫線で区切り／「残り」<code>10px</code>＋「<b>5</b>」<code>30px</code> Bold <b>赤</b>＋「名」<code>11.5px</code> 黒</td></tr>
+  <tr><td>下の注記</td><td>「※ 先着順・今月の受付枠です」<code>10px</code> <code>#968f8a</code></td></tr>
 </table>
 <div class="note">
   <b>「今月の受付枠」は仮の文言です。</b> 事実と違うと問題になるので、先方に確認してから公開してください。
@@ -218,15 +241,15 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
 <h2><span class="n">06</span>数字で見る <span class="tag">赤い面</span></h2>
 <table>
   <tr><th>項目</th><th>値</th></tr>
-  <tr><td>面</td><td>赤のグラデーション <code>#D20014</code> → <code>#AB000F</code> → <code>#7C0009</code>（上から下）<br>角丸 <code>22px</code>／左右に <code>10px</code> の余白を空けて浮かせる</td></tr>
+  <tr><td>面</td><td>赤のグラデーション <code>#CA0E15</code> → <code>#AE0A11</code> → <code>#8E060C</code>（上から下）<br>角丸 <code>22px</code>／上下16px・左右10px の余白を空けて浮かせる</td></tr>
   <tr><td>見出し・本文</td><td>白／本文は白 <code>85%</code></td></tr>
   <tr><td>最初のカード</td><td>白いカード（角丸16・左に赤3px）「本田技研工業株式会社の100%出資会社です」</td></tr>
   <tr><td>数字の並び</td><td>2列グリッド／間隔 <code>9px</code></td></tr>
-  <tr><td>カード</td><td>白 <code>12%</code> ＋ 白 <code>26%</code> の枠／角丸 <code>16px</code>／余白 <code>22×14</code></td></tr>
-  <tr><td>初任給カード（横長）</td><td>白 <code>17%</code>／角丸 <code>22px</code>／余白 <code>26/16/24</code></td></tr>
+  <tr><td>カード</td><td>白 <code>13%</code> ＋ 白 <code>28%</code> の枠／角丸 <code>16px</code>／余白 <code>22×14</code></td></tr>
+  <tr><td>初任給カード（横長）</td><td>白 <code>18%</code>／角丸 <code>22px</code>／余白 <code>26/16/24</code></td></tr>
   <tr><td>数字</td><td>横長 <code>62px</code>／通常 <code>44px</code>／Bold／<b>すべて白</b></td></tr>
   <tr><td>ラベル</td><td><code>11px</code>／白 <code>84%</code></td></tr>
-  <tr><td>「いちばん気になる数字」</td><td>白いピル（角丸999）＋赤文字 <code>#A8000F</code>／<code>9.5px</code></td></tr>
+  <tr><td>「いちばん気になる数字」</td><td>白いピル（角丸999）＋赤文字 <code>#CA0E15</code>／<code>9.5px</code></td></tr>
   <tr><td>「2026年度実績」</td><td>白45%の枠線＋白文字／<code>9px</code>／角丸999</td></tr>
 </table>
 
@@ -316,15 +339,24 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
 <h2><span class="n">13</span>最終CTA</h2>
 <table>
   <tr><th>項目</th><th>値</th></tr>
-  <tr><td>面</td><td><code>#101014</code>／角丸 <code>22px</code>／左右10px空けて浮かせる／余白 <code>60/22/46</code></td></tr>
-  <tr><td>見出し</td><td><code>26px</code> Black／白／「大丈夫です。」を赤に</td></tr>
-  <tr><td>ボタン</td><td>①LINE緑（2行）②赤 <code>#E60012</code> 塗り／縦に並べる</td></tr>
+  <tr><td>面</td><td><b>赤ベタ</b> <code>#CA0E15</code> → <code>#8E060C</code>／角丸 <code>22px</code>／上下16px・左右10px空ける／余白 <code>60/22/46</code></td></tr>
+  <tr><td>見出し</td><td><code>26px</code> Black／<b>白</b>／「大丈夫です。」は白のまま、下に白のマーカー</td></tr>
+  <tr><td>ボタン</td><td>①LINE緑（2行）②<b>白地＋赤文字</b>／縦に並べる</td></tr>
   <tr><td>PC時</td><td>QRコードを表示（スマホでは非表示）</td></tr>
+</table>
+
+<h2><span class="n">13.5</span>フッター <span class="tag">ここだけ黒</span></h2>
+<table>
+  <tr><th>項目</th><th>値</th></tr>
+  <tr><td>面</td><td><b><code>#231815</code>（黒）</b>／余白 <code>44/22/100</code></td></tr>
+  <tr><td>ロゴ</td><td>白いプレートに通常版ロゴ・高さ <code>17px</code></td></tr>
+  <tr><td>会社情報</td><td><code>11.5px</code>／白55%／上に白14%の罫線</td></tr>
+  <tr><td>リンク</td><td>コーポレートサイト／プライバシーポリシー（下線）</td></tr>
 </table>
 
 <h2><span class="n">14</span>途中のLINE導線 <span class="tag">2箇所</span></h2>
 <p>数字セクションの後と、募集職種の後。高さ <code>308px</code>／余白 <code>38/22</code>。
-「LINE」の小ラベル＋見出し <code>19px</code>＋説明 <code>12.5px</code>＋幅いっぱいのLINEボタン。</p>
+地は<b>うすいグレー <code>#f7f4f2</code></b>。「LINE」の小ラベル（緑）＋見出し <code>19px</code> 黒＋説明 <code>12.5px</code>＋幅いっぱいのLINEボタン。</p>
 
 <h2><span class="n">15</span>計測について <span class="tag warn">無料プランの制約</span></h2>
 <p>GA4・Metaピクセル・TikTokピクセルは<b>入りません</b>。代わりに、LINEボタン4箇所それぞれに
