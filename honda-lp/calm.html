@@ -1069,6 +1069,33 @@ section.s{scroll-margin-top:96px}
 .nums .sub-h{border-top-color:rgba(255,255,255,.2);color:#fff}
 .sub-h + .tr-list,.sub-h + .rq,.sub-h + .map{margin-top:16px}
 
+/* ══════ PC：作り込まない ══════════════════════════════
+   本体はスマホ幅（412px）のまま中央に置き、左右は
+   ただの背景色として画面いっぱいに広げるだけ。
+   背景動画・左右のパーツ・端末風の枠は使わない。
+   STUDIOでは「本体を最大幅412px・中央寄せ」「body背景色」
+   の2つだけで同じ形になる。                          */
+.bg-stage{display:none!important}
+.side,.sec-rail,.sec-mark{display:none!important}
+
+@media (min-width:1024px){
+  body,body.has-bg{background:#0d0d11!important;background-image:none!important}
+  body::before{display:none!important}
+
+  /* 端末モックに見せない：角丸と外枠をやめて、ただの縦一本に */
+  .phone{max-width:412px;margin:0 auto;border-radius:0;outline:0;
+    box-shadow:0 0 0 1px rgba(255,255,255,.06),0 0 60px rgba(0,0,0,.5)}
+
+  .hdr,.drawer{max-width:412px;border-radius:0}
+  .fixed{max-width:412px;bottom:0;border-radius:0;border:0;
+    box-shadow:0 -1px 0 rgba(40,32,28,.07),0 -6px 26px rgba(0,0,0,.35)}
+
+  /* 本文まわりの余白は、スマホと同じ見え方で通す */
+  section.s{padding:62px 30px 58px}
+  section.s.nums,.last{margin:14px 10px}
+}
+
+
 /* ══════════════════════════════════════════════════
    安心感モード
    採用サイトに必要なのは「効果」ではなく「余白と写真と読みやすさ」。
@@ -1216,6 +1243,8 @@ section.s.nums{background:var(--bg2);color:var(--ink);clip-path:none;margin:0;ov
 .slot-n{border-left-color:var(--line)}
 .slot-n small{color:var(--ink3)} .slot-n b{color:var(--red);text-shadow:none} .slot-n span{color:var(--ink)}
 .slot-note{color:var(--ink3)} .slot::after{display:none}
+@media (min-width:1024px){ body,body.has-bg{background:#e9e5e1!important}
+  .phone{box-shadow:0 0 0 1px rgba(40,32,28,.08),0 0 60px rgba(40,32,28,.14)} }
 
 </style>
 </head>

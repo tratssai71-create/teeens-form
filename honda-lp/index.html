@@ -1068,6 +1068,33 @@ section.s{scroll-margin-top:96px}
   font-size:17px;font-weight:700;letter-spacing:-.01em;line-height:1.5}
 .nums .sub-h{border-top-color:rgba(255,255,255,.2);color:#fff}
 .sub-h + .tr-list,.sub-h + .rq,.sub-h + .map{margin-top:16px}
+
+/* ══════ PC：作り込まない ══════════════════════════════
+   本体はスマホ幅（412px）のまま中央に置き、左右は
+   ただの背景色として画面いっぱいに広げるだけ。
+   背景動画・左右のパーツ・端末風の枠は使わない。
+   STUDIOでは「本体を最大幅412px・中央寄せ」「body背景色」
+   の2つだけで同じ形になる。                          */
+.bg-stage{display:none!important}
+.side,.sec-rail,.sec-mark{display:none!important}
+
+@media (min-width:1024px){
+  body,body.has-bg{background:#0d0d11!important;background-image:none!important}
+  body::before{display:none!important}
+
+  /* 端末モックに見せない：角丸と外枠をやめて、ただの縦一本に */
+  .phone{max-width:412px;margin:0 auto;border-radius:0;outline:0;
+    box-shadow:0 0 0 1px rgba(255,255,255,.06),0 0 60px rgba(0,0,0,.5)}
+
+  .hdr,.drawer{max-width:412px;border-radius:0}
+  .fixed{max-width:412px;bottom:0;border-radius:0;border:0;
+    box-shadow:0 -1px 0 rgba(40,32,28,.07),0 -6px 26px rgba(0,0,0,.35)}
+
+  /* 本文まわりの余白は、スマホと同じ見え方で通す */
+  section.s{padding:62px 30px 58px}
+  section.s.nums,.last{margin:14px 10px}
+}
+
 /* ══════ 安心感ベース（配色は元のまま）════════════
    色は Honda赤 #E60012 ／ 黒 #101014 ／ 白 をそのまま使用。
    安心感は「形・余白・文字の太さ・赤の面積」で作る。
