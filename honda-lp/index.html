@@ -1315,22 +1315,26 @@ section.s.nums{background:linear-gradient(168deg,#CA0E15 0%,#AE0A11 54%,#8E060C 
    ページ全体は白ベースのまま。ここだけ映像の上に文字を乗せる。
    ══════════════════════════════════════════════════════ */
 .fv{background:#0f0b0a!important;color:#fff;
-  min-height:648px;display:flex;flex-direction:column;justify-content:flex-end;
+  min-height:712px;display:flex;flex-direction:column;justify-content:flex-end;
   padding:0 0 28px;position:relative;overflow:hidden}
 
 /* 動画：画面幅いっぱい（絶対配置で地に敷く） */
 .fv-video{order:0;position:absolute;inset:0;margin:0;height:auto;
   border-radius:0;background:#0f0b0a}
-.fv-mov{opacity:1!important;object-fit:cover;object-position:center 26%}
+.fv-mov{opacity:1!important;object-fit:cover;object-position:center 18%}
 
 /* 文字を読ませるための幕。下を強く、上は軽く。 */
+/* 幕：顔が出る上半分は薄く、素材のテロップが乗る中盤から一気に濃くする。
+   （本番でテロップなしの素材に差し替えたら、中盤の濃さは弱めてよい） */
 .fv-scrim{display:block!important;position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(180deg,
-    rgba(15,11,10,.52) 0%,
-    rgba(15,11,10,.08) 22%,
-    rgba(15,11,10,.30) 50%,
-    rgba(15,11,10,.86) 78%,
-    rgba(15,11,10,.97) 100%)}
+    rgba(15,11,10,.42) 0%,
+    rgba(15,11,10,.06) 16%,
+    rgba(15,11,10,.14) 30%,
+    rgba(15,11,10,.66) 44%,
+    rgba(15,11,10,.90) 58%,
+    rgba(15,11,10,.97) 74%,
+    rgba(15,11,10,.99) 100%)}
 
 /* 文字は下に置く */
 .fv-in{order:1;position:relative;z-index:3;padding:0 22px 0}
