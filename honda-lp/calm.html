@@ -1163,11 +1163,11 @@ section.s.nums{background:var(--bg2);color:var(--ink);clip-path:none;margin:0;ov
   <!-- FV -->
   <div class="fv">
     <div class="fv-video">
-      <!-- 確認用の仮素材（Mixkitのフリー動画・整備シーン）。
+      <!-- 確認用の仮素材（Mixkitのフリー動画・ご来店のお客様への接客シーン＝営業職）。
            本番は先方の素材に差し替え、ファイルは自前で持つこと。 -->
       <video class="fv-mov" autoplay muted loop playsinline preload="metadata"
-             poster="" aria-hidden="true">
-        <source src="https://assets.mixkit.co/videos/4716/4716-720.mp4" type="video/mp4">
+             poster="" aria-hidden="true" data-clip="0,10">
+        <source src="https://assets.mixkit.co/videos/23476/23476-720.mp4" type="video/mp4">
       </video>
       <div class="glow fv-g1"></div>
       <div class="glow fv-g2"></div>
@@ -1945,7 +1945,7 @@ document.querySelectorAll('.qa summary').forEach(function(s){
   v.muted=true; v.loop=true; v.autoplay=true; v.playsInline=true;
   v.setAttribute('playsinline',''); v.preload='auto';
   /* 確認用の仮素材。本番は先方の映像に差し替え、ファイルは自前で持つこと */
-  v.src='https://assets.mixkit.co/videos/13270/13270-720.mp4';
+  v.src='https://assets.mixkit.co/videos/13260/13260-720.mp4';
   v.addEventListener('loadeddata',function(){
     v.classList.add('on');
     document.body.classList.add('has-bg');
@@ -2001,6 +2001,20 @@ Metaピクセルは、Meta側で発行されるコードをそのまま貼り付
     send(kind, label(a));
   }, true);
 })();
+
+/* ══ 長い素材は、頭の見せたい部分だけを繰り返す ══════════
+   data-clip="開始,終了"（秒）を指定した動画に効く。
+   STUDIOでは、あらかじめ切り出した短い動画を入れれば同じこと。 */
+(function(){
+  document.querySelectorAll('video[data-clip]').forEach(function(v){
+    var a=v.dataset.clip.split(',').map(Number), from=a[0], to=a[1];
+    v.addEventListener('loadedmetadata',function(){ if(v.currentTime<from) v.currentTime=from; });
+    v.addEventListener('timeupdate',function(){
+      if(v.currentTime>=to || v.currentTime<from) v.currentTime=from;
+    });
+  });
+})();
+
 </script>
 </body>
 </html>
