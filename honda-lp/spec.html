@@ -118,8 +118,8 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
 <h3>面の配分</h3>
 <table>
   <tr><th>面</th><th>どこ</th></tr>
-  <tr><td><span class="sw" style="background:#ffffff"></span>白</td><td>FV／選ばれる理由／募集職種／よくある質問</td></tr>
-  <tr><td><span class="sw" style="background:#f7f4f2"></span>うすいグレー</td><td>待遇と条件／インタビュー／選考の流れ／途中のLINE導線</td></tr>
+  <tr><td><span class="sw" style="background:#ffffff"></span>白</td><td>選ばれる理由／インタビュー／選考の流れ／会社概要</td></tr>
+  <tr><td><span class="sw" style="background:#f7f4f2"></span>うすいグレー</td><td>待遇と条件／よくある質問／途中のLINE導線</td></tr>
   <tr><td><span class="sw" style="background:#CA0E15"></span>赤ベタ</td><td><b>数字で見る</b>／<b>最終CTA</b> の2面だけ</td></tr>
   <tr><td><span class="sw" style="background:#231815"></span>黒ベタ</td><td><b>ファーストビュー（全面動画）</b>と<b>フッター</b></td></tr>
 </table>
@@ -151,14 +151,14 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
 <h2><span class="n">02</span>作る順番</h2>
 <ol class="steps">
   <li>ヘッダー（固定）＋ ドロワー</li>
-  <li>ファーストビュー（動画・コピー・残り5名・ボタン2つ）</li>
+  <li>ファーストビュー（全面動画・コピー・残り5名・ボタン2つ）</li>
   <li>下部の固定バー ← ここまでで骨格が完成</li>
   <li>数字で見る</li>
-  <li>選ばれる理由（＋入社後の流れ）</li>
-  <li>待遇と、条件。（＋募集要項）</li>
-  <li>募集している職種（＋勤務地）</li>
+  <li>選ばれる理由</li>
+  <li>待遇と、条件。（＋勤務地）</li>
   <li>若手社員インタビュー</li>
-  <li>よくある質問 → 選考の流れ → 最終CTA</li>
+  <li>よくある質問 → 選考の流れ</li>
+  <li>会社概要 → 最終CTA</li>
   <li>途中のLINE導線を2箇所に差し込む</li>
   <li>フッター</li>
 </ol>
@@ -185,10 +185,10 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
   <tr><td><code>NUMBERS</code></td><td>数字で見る</td></tr>
   <tr><td><code>WHY US</code></td><td>選ばれる理由</td></tr>
   <tr><td><code>CONDITIONS</code></td><td>待遇と条件</td></tr>
-  <tr><td><code>POSITIONS</code></td><td>募集職種</td></tr>
   <tr><td><code>INTERVIEW</code></td><td>社員インタビュー</td></tr>
   <tr><td><code>FAQ</code></td><td>よくある質問</td></tr>
   <tr><td><code>FLOW</code></td><td>選考の流れ</td></tr>
+  <tr><td><code>COMPANY</code></td><td>会社概要</td></tr>
 </table>
 <p>ドロワーの地は<b>白98%</b>。日本語 <code>19px</code>／Bold／<b>黒</b>。英字 <code>9.5px</code>／Bold／赤 <code>#E60012</code>／字間 <code>0.16em</code>。
 各項目の下に白12%の罫線。下にボタン2つ（間隔9px）。</p>
@@ -283,12 +283,8 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
   <li>売り込みではなく、話を聞いて提案する</li>
   <li>クルマの知識ゼロで大丈夫</li>
 </ul>
-<p>後半に中見出し「入社してから、ちゃんと教えます。」を置いて、入社前→1〜3ヶ月→3ヶ月〜→1年目〜→継続 の5ステップ。</p>
-<table>
-  <tr><th>項目</th><th>値</th></tr>
-  <tr><td>ステップのカード</td><td>白／角丸 <code>16px</code>／枠線 <code>#e6e6e8</code>／余白 <code>18/18/18/20</code></td></tr>
-  <tr><td>期間ラベル</td><td>左側に固定幅で配置（「入社前」「1〜3ヶ月」など）</td></tr>
-</table>
+<p>カードは白／角丸 <code>16px</code>／枠線 <code>#e7e1dd</code>。番号 01・02・03 は<b>赤</b>で右上に大きく。
+見出しの文字には赤いマーカー（下60%に <code>rgba(202,14,21,.2)</code>）。</p>
 
 <h2><span class="n">08</span>待遇と、条件。</h2>
 <p class="lead">福利厚生6枚 → 中見出し「募集要項」→ 要項の表、という並び。</p>
@@ -300,21 +296,35 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
   <tr><td>項目名（左）</td><td>幅 <code>96px</code>／<code>12px</code> Bold／<code>#5a5a5e</code></td></tr>
   <tr><td>内容（右）</td><td><code>12.5px</code>／行間 <code>1.85</code></td></tr>
 </table>
-<div class="note">
-  最後に「健康経営優良法人2026に認定されています」のカードを置いています（白・左に赤線）。
-</div>
-
-<h2><span class="n">09</span>募集している職種</h2>
-<p>営業職 ／ サービス職（整備）の2枚。末尾に中見出し「勤務地」＋6県のグリッド。</p>
+<p>要項の下に中見出し「<b>勤務地</b>」を置いて、6県のグリッドを入れます。</p>
 <table>
   <tr><th>項目</th><th>値</th></tr>
   <tr><td>勤務地の枠</td><td>白／角丸 <code>16px</code>／余白 <code>22px</code>／枠線</td></tr>
   <tr><td>県の並び</td><td>3列 × 2段／間隔 <code>8px</code>／各 <code>82px</code> 幅</td></tr>
-  <tr><td>県名</td><td>日本語＋下に英字（OKAYAMA など）</td></tr>
 </table>
-<div class="note ok">
-  <b>店舗一覧75件は作りません。</b>「店舗まで出さなくていい、エリアなどは欲しい」との回答に合わせています。
+<div class="note">
+  いちばん下に「健康経営優良法人2026に認定されています」のカードを置いています（白・左に赤線）。
 </div>
+
+<h2><span class="n">09</span>会社概要 <span class="tag">いちばん最後</span></h2>
+<p class="lead">最終CTAの<b>直前</b>に置きます。地は白。</p>
+<table>
+  <tr><th>項目</th><th>値</th></tr>
+  <tr><td>表</td><td>行ごとに下罫線 <code>#e7e1dd</code>／行の余白 上下11px</td></tr>
+  <tr><td>項目名（左）</td><td>幅 <code>74px</code>／<code>12.5px</code> Bold／<code>#968f8a</code></td></tr>
+  <tr><td>内容（右）</td><td><code>12.5px</code>／行間 <code>1.75</code>／<code>#5c5450</code></td></tr>
+</table>
+<table>
+  <tr><td>社名</td><td>株式会社 ホンダモビリティ中四国</td></tr>
+  <tr><td>設立</td><td>昭和53年9月27日</td></tr>
+  <tr><td>資本金</td><td>4億9,280万円</td></tr>
+  <tr><td>株主</td><td>本田技研工業株式会社 100%</td></tr>
+  <tr><td>代表者</td><td>代表取締役社長　仲 敏彦</td></tr>
+  <tr><td>従業員数</td><td>1,711名（2025年4月現在）</td></tr>
+  <tr><td>本社</td><td>〒701-0145　岡山県岡山市北区今保144-1</td></tr>
+  <tr><td>販売拠点</td><td>75店舗（Honda Cars 67／U-Select 8）</td></tr>
+  <tr><td>事業内容</td><td>新車販売、中古車販売、リース、レンタカー、車検・点検・整備・修理、損害保険代理店業務、部品用品販売</td></tr>
+</table>
 
 <h2><span class="n">10</span>若手社員インタビュー</h2>
 <p>動画サムネイル4枚を縦に並べる（間隔12px）。</p>
