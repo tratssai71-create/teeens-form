@@ -1062,107 +1062,20 @@ section.s{scroll-margin-top:96px}
 
 @media (prefers-reduced-motion:reduce){ .slot::after,.slot-dot{animation:none} }
 
-/* ══════ 安心感ベース（配色は元のまま）════════════
-   色は Honda赤 #E60012 ／ 黒 #101014 ／ 白 をそのまま使用。
-   安心感は「形・余白・文字の太さ・赤の面積」で作る。
-   ① 尖った切り角をやめ、均一にまるく
-   ② 図面的な記号（コーナーマーカー・目盛り）を外す
-   ③ 斜めの切り口をやめ、水平に
-   ④ 文字の太さを一段落とし、行間と余白を広げる
-   ⑤ 赤は「色」ではなく「面積」を減らす（差し色として残す）  */
 
-body{line-height:1.95}
+@media (min-width:1024px){
 
-/* ① 角をすべて均一にまるく */
-.btn,.lk{border-radius:14px}
-.btn .ic{border-radius:10px}
-.fv-vtag,.fv-mute{border-radius:11px}
-.map,.rc,.job-card,.shoplist,.tab,.more,.ph-box,.vid,.qr,.ngrid{border-radius:14px}
-.ngrid{overflow:hidden}
-.pref div{border-radius:10px}
-.fixed .btn{border-radius:12px}
-
-/* ② 図面的な記号を外す */
-.br,.fv-ticks,.fv-foot,.fv-side{display:none}
-
-/* ③ 斜めの切り口をやめる */
-section.s.nums{clip-path:none;margin:0}
-.last{clip-path:none}
-
-/* ④ 文字の圧を下げ、余白を広げる */
-section.s{padding:72px 30px 66px}
-.fv h1{font-weight:800;line-height:1.36;letter-spacing:-.01em;font-size:34px}
-h2.t{font-weight:800;line-height:1.58;font-size:23.5px;letter-spacing:0;margin-bottom:16px}
-.last h2{font-weight:800;line-height:1.62;font-size:24px}
-.rc h3,.job h3,.st h3{font-weight:700}
-.body{font-size:13.5px}
-.lab{letter-spacing:.18em;margin-bottom:14px}
-
-/* ⑤ 赤の「面積」を減らす（色はそのまま #E60012）
-   ・ヒーローの大きな赤帯 → 細い一本線に
-   ・見出しの発光・影 → なし
-   ・巨大な赤数字の発光 → なし                        */
-.fv-band{height:3px;top:152px;background:var(--red);box-shadow:none;opacity:.85}
-.fv-band::after{display:none}
-.fv h1 em{color:var(--red);text-shadow:none}
-.fv-g1{background:radial-gradient(circle,rgba(230,0,18,.2),transparent 68%)}
-.fv-g2{background:radial-gradient(circle,rgba(70,120,190,.16),transparent 72%)}
-.ncell.wide .v{text-shadow:none}
-.ncell.wide .rb{box-shadow:none}
-.nums .glow{background:radial-gradient(circle,rgba(230,0,18,.14),transparent 68%)}
-.nums::before{background-image:none}
-.last::before{background-image:none}
-.rc .n{-webkit-text-stroke:1px rgba(230,0,18,.26)}
-
-/* ヒーローを少し明るく、面の陰影をゆるめる */
-.fv{min-height:640px}
-.fv-video{background:
-  radial-gradient(74% 48% at 76% 8%, #4a2226 0%, transparent 62%),
-  radial-gradient(64% 46% at 8% 92%, #222c36 0%, transparent 66%),
-  linear-gradient(166deg,#33333a 0%,#43434c 46%,#1e1e24 100%)}
-.fv-scrim{background:linear-gradient(180deg,rgba(16,16,20,.52) 0%,rgba(16,16,20,.1) 26%,
-  rgba(16,16,20,.4) 56%,rgba(16,16,20,.88) 80%,var(--black) 100%)}
-.fv-grid{background-size:56px 56px;
-  background-image:
-    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px)}
-.pl-1{background:linear-gradient(176deg,rgba(255,255,255,.06),rgba(255,255,255,.01));
-  border-bottom-color:rgba(255,255,255,.1)}
-.pl-2{background:linear-gradient(176deg,rgba(0,0,0,.22),rgba(0,0,0,.03));border-bottom-color:rgba(255,255,255,.05)}
-.pl-3{background:linear-gradient(0deg,rgba(16,16,20,.6),transparent);border-top-color:rgba(255,255,255,.07)}
-.vig{background:radial-gradient(120% 92% at 50% 38%,transparent 42%,rgba(0,0,0,.48) 100%)}
-.grain{opacity:.3}
-
-/* 影と傾きをやわらかく */
-.rc{box-shadow:0 10px 26px -20px rgba(20,20,30,.4)}
-.rc:nth-child(2),.rc:nth-child(3){transform:none}
-.rc::after{display:none}
-
-/* 上端の線と節点マーカーを細く */
-.s-rule{background:linear-gradient(90deg,transparent 0 14px,var(--red) 14px 52px,rgba(20,20,30,.12) 52px)}
-.s-rule::after{width:6px;height:6px;top:-2.5px;left:11.5px}
-/* ══ 07ベース：余白をたっぷり。大きな数字を淡く敷く ══ */
-.phone{background-image:
-  radial-gradient(rgba(20,20,30,.06) 1px,transparent 1px),
-  linear-gradient(180deg,#ffffff 0%,#f5f6f9 100%);
-  background-size:26px 26px,100% 100%;background-position:14px 8px,0 0}
-section.s{padding:88px 30px 80px}
-section.s::after{font-size:210px;top:4px;right:-30px;line-height:.8;
-  -webkit-text-stroke:0;color:rgba(20,20,30,.055)}
-section.s.nums::after{-webkit-text-stroke:0;color:rgba(255,255,255,.07)}
-section.s.know,section.s.shops,section.s.flow{background:rgba(233,235,241,.58)}
-.nums .mesh{background-image:none}
-h2.t{font-size:25px;margin-bottom:20px}
-.body{font-size:14px}
-section.s.nums{background:linear-gradient(172deg,#17171d 0%,#101014 100%)}
-.last{background:linear-gradient(172deg,#101014 0%,#17171d 100%)}
-
-
+  .bg-stage video{filter:blur(1px) saturate(.85) brightness(.52);transform:scale(1.03)}
+  .bg-stage .tint{background:
+      radial-gradient(40% 62% at 50% 50%,rgba(8,8,11,.6),transparent 72%),
+      linear-gradient(180deg,rgba(8,8,11,.42),rgba(8,8,11,.12) 40%,rgba(8,8,11,.6))}
+  .bg-stage .mesh{opacity:.5}
+}
 </style>
 </head>
 <body>
 
-<div class="draft">DESIGN DRAFT ／ デザイン案 <b>推し3 余白重視</b> ／ <b>※確認中</b>は仮テキスト</div>
+<div class="draft">DESIGN DRAFT ／ デザイン案 <b>PC背景 B：動画をはっきり見せる</b> ／ <b>※確認中</b>は仮テキスト</div>
 
 
 <!-- PC表示のとき、画面全体の背景に流す動画 -->
