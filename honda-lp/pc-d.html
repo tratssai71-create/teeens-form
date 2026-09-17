@@ -1063,6 +1063,12 @@ section.s{scroll-margin-top:96px}
 @media (prefers-reduced-motion:reduce){ .slot::after,.slot-dot{animation:none} }
 
 
+/* ══════ 統合セクションの中見出し ══════════════════ */
+.sub-h{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);
+  font-size:17px;font-weight:700;letter-spacing:-.01em;line-height:1.5}
+.nums .sub-h{border-top-color:rgba(255,255,255,.2);color:#fff}
+.sub-h + .tr-list,.sub-h + .rq,.sub-h + .map{margin-top:16px}
+
 @media (min-width:1024px){
 
   .bg-stage video{display:none}
@@ -1112,14 +1118,11 @@ section.s{scroll-margin-top:96px}
     </header>
 
     <nav class="drawer" id="drawer">
-      <a class="mi" href="#about"><small>ABOUT</small>会社を知る</a>
-      <a class="mi" href="#why"><small>WHY US</small>選ばれる理由</a>
       <a class="mi" href="#numbers"><small>NUMBERS</small>数字で見る</a>
+      <a class="mi" href="#why"><small>WHY US</small>選ばれる理由</a>
+      <a class="mi" href="#conditions"><small>CONDITIONS</small>待遇と条件</a>
       <a class="mi" href="#positions"><small>POSITIONS</small>募集職種</a>
-      <a class="mi" href="#oneday"><small>ONE DAY</small>1日の流れ</a>
-      <a class="mi" href="#training"><small>TRAINING</small>入社後の流れ</a>
-      <a class="mi" href="#shops"><small>SHOPS</small>働く場所</a>
-      <a class="mi" href="#requirements"><small>REQUIREMENTS</small>募集要項</a>
+      <a class="mi" href="#interview"><small>INTERVIEW</small>社員インタビュー</a>
       <a class="mi" href="#faq"><small>FAQ</small>よくある質問</a>
       <a class="mi" href="#flow"><small>FLOW</small>選考の流れ</a>
       <div class="d-cta">
@@ -1193,102 +1196,6 @@ section.s{scroll-margin-top:96px}
     </div>
   </div>
 
-  <!-- 会社を知る -->
-  <section class="s know" id="about">
-    <h2 class="t">6県で、<em>75店舗</em>。<br>地域のカーライフを支える。</h2>
-    <p class="body">ホンダモビリティ中四国は、中四国エリアでHondaの正規ディーラーを展開しています。クルマの販売から点検・整備、保険まで。地域のお客様の毎日に、いちばん近いところで関わる仕事です。</p>
-
-    <div class="fact">
-      <div class="fact-hd"><b>本田技研工業株式会社</b>の100%出資会社です</div>
-      <p>親会社はHondaそのもの。設立は昭和53年、従業員は1,711名。中四国で最大規模のHonda販売網を担っています。</p>
-    </div>
-
-    <div class="prof">
-      <dl><dt>社名</dt><dd>株式会社 ホンダモビリティ中四国</dd></dl>
-      <dl><dt>設立</dt><dd>昭和53年9月27日</dd></dl>
-      <dl><dt>資本金</dt><dd>4億9,280万円</dd></dl>
-      <dl><dt>株主</dt><dd>本田技研工業株式会社 100%</dd></dl>
-      <dl><dt>代表者</dt><dd>仲 敏彦</dd></dl>
-      <dl><dt>従業員数</dt><dd>1,711名（2025年4月現在）</dd></dl>
-      <dl><dt>本社</dt><dd>岡山県岡山市北区今保144-1</dd></dl>
-      <dl><dt>事業内容</dt><dd>新車・中古車販売、リース、レンタカー、車検・点検・整備・修理、損害保険代理店業務、部品用品販売</dd></dl>
-    </div>
-    <div class="ph-box r-16x9" style="margin-top:20px">
-      <span class="pt">画像予定</span>
-      <span class="pd">店舗外観、またはショールーム内の様子</span>
-    </div>
-    <p class="cap-n">※ 明るく開放的な店内が伝わるカットを想定</p>
-
-    <div class="map">
-      <div class="map-h">展開エリア（Honda Cars ／ U-Select 計75店舗）</div>
-      <div class="pref">
-        <div>岡山<small>OKAYAMA</small></div>
-        <div>広島<small>HIROSHIMA</small></div>
-        <div>山口<small>YAMAGUCHI</small></div>
-        <div>香川<small>KAGAWA</small></div>
-        <div>愛媛<small>EHIME</small></div>
-        <div>高知<small>KOCHI</small></div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- 代表メッセージ -->
-  <section class="s msg" id="message">
-    <h2 class="t">「わからない」から<br>始めて、いい。</h2>
-    <div class="msg-q">&ldquo;</div>
-    <div class="msg-body">
-      <p>採用の面接で、いちばんよく聞かれるのが「クルマに詳しくないのですが、大丈夫でしょうか」という質問です。答えはいつも同じで、大丈夫です。いま店舗で活躍している社員の多くが、知識ゼロで入社しています。</p>
-      <p>私たちの仕事は、クルマを売り込むことではありません。お客様の暮らしを聞いて、いちばん合う一台を一緒に選ぶことです。だから必要なのは、知識よりも先に、人の話をきちんと聞ける姿勢だと考えています。知識のほうは、入社してから時間をかけて身につけてもらえば間に合います。</p>
-      <p>中四国の6県で、75の店舗が地域の毎日を支えています。その一つひとつに、人の生活があります。そこに関わる仕事に少しでも興味を持っていただけたなら、まずは気軽に話を聞きに来てください。お会いできることを楽しみにしています。</p>
-      <p class="tbd">※本文は代表メッセージの下書きです。ご本人の言葉に差し替えてください。</p>
-    </div>
-    <div class="msg-who">
-      <div class="ph-box"><span class="pt">顔写真</span></div>
-      <div>
-        <div class="nm">仲 敏彦</div>
-        <div class="ro">代表取締役社長</div>
-      </div>
-    </div>
-    <p class="cap-n">※ 明るい室内で、正面よりやや斜めからのカットを想定</p>
-  </section>
-
-  <!-- 選ばれる理由 -->
-  <section class="s" id="why">
-    <h2 class="t">「営業」のイメージ、<br>変わるかもしれません。</h2>
-    <p class="body">売り込みが苦手。知識がない。そんな不安を持っている方にこそ、読んでほしい3つのことがあります。</p>
-
-    <div class="reason">
-      <div class="rc">
-        <div class="ph-box r-3x2" style="margin:-22px -20px 18px">
-          <span class="pt">画像予定</span>
-          <span class="pd">来店したお客様を迎えるスタッフ</span>
-        </div>
-        <span class="n">01</span>
-        <h3><mark>飛び込み営業は、ありません。</mark></h3>
-        <p>基本は来店型。「Hondaの車が気になって」と足を運んでくださったお客様をお迎えするところから始まります。知らない家のインターホンを押す仕事ではありません。</p>
-      </div>
-      <div class="rc">
-        <div class="ph-box r-3x2" style="margin:-22px -20px 18px">
-          <span class="pt">画像予定</span>
-          <span class="pd">カウンターで商談している様子</span>
-        </div>
-        <span class="n">02</span>
-        <h3><mark>売り込むのではなく、聞く。</mark></h3>
-        <p>お子さんが生まれる。通勤距離が変わる。お客様の生活を伺って、合う一台をご提案する。話を聞くのが好きな人ほど、向いている仕事です。</p>
-      </div>
-      <div class="rc">
-        <div class="ph-box r-3x2" style="margin:-22px -20px 18px">
-          <span class="pt">画像予定</span>
-          <span class="pd">先輩が新人に教えている研修シーン</span>
-        </div>
-        <span class="n">03</span>
-        <h3><mark>クルマの知識は、入社後で。</mark></h3>
-        <p>ほとんどの先輩が、知識ゼロからのスタートでした。研修と、隣にいる先輩のサポートがあります。「好き」より「知りたい」があれば十分です。</p>
-      </div>
-    </div>
-  </section>
-
   <!-- 数字 -->
   <section class="s nums" id="numbers">
     <div class="mesh"></div>
@@ -1296,6 +1203,11 @@ section.s{scroll-margin-top:96px}
     <div class="grain"></div>
     <h2 class="t">数字で見る、<br>私たちの働き方。</h2>
     <p class="body">給与だけでなく、休みも、続けやすさも。事実だけをお見せします。</p>
+
+    <div class="fact" style="margin-top:0;margin-bottom:20px">
+      <div class="fact-hd"><b>本田技研工業株式会社</b>の100%出資会社です</div>
+      <p>親会社はHondaそのもの。設立は昭和53年、従業員は1,711名。中四国で最大規模のHonda販売網を担っています。</p>
+    </div>
 
     <div class="ngrid">
       <div class="ncell wide">
@@ -1337,7 +1249,6 @@ section.s{scroll-margin-top:96px}
       </div>
     </div>
   </section>
-
   <!-- 途中のLINE導線 -->
   <div class="line-cut">
     <div class="in">
@@ -1346,93 +1257,42 @@ section.s{scroll-margin-top:96px}
       <p>選考前の情報収集だけでも構いません。エントリーの前に、働き方や仕事内容を気軽に聞いてみてください。</p>
       <a class="btn btn-line" href="#"><svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.64.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.036.194-.36.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg><span class="lbl">採用情報をLINEで受け取る<small>友だち追加はこちら</small></span></a>
     </div>
-  </div>
+  <!-- 選ばれる理由 -->
+  <section class="s" id="why">
+    <h2 class="t">「営業」のイメージ、<br>変わるかもしれません。</h2>
+    <p class="body">売り込みが苦手。知識がない。そんな不安を持っている方にこそ、読んでほしい3つのことがあります。</p>
 
-
-  <!-- 職種 -->
-  <section class="s" id="positions">
-    <h2 class="t">募集している職種</h2>
-    <div class="jobs">
-      <div class="job-card">
-        <div class="ph-box r-16x9">
+    <div class="reason">
+      <div class="rc">
+        <div class="ph-box r-3x2" style="margin:-22px -20px 18px">
           <span class="pt">画像予定</span>
-          <span class="pd">営業スタッフの接客カット</span>
+          <span class="pd">来店したお客様を迎えるスタッフ</span>
         </div>
-        <div class="job-b">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3v13h2a3 3 0 006 0h4a3 3 0 006 0h2v-5l-3-4z"/></svg></div>
-          <div><h3>営業職</h3><p>ご来店いただいたお客様への提案、納車後のフォロー、保険や点検のご案内まで。</p></div>
-        </div>
+        <span class="n">01</span>
+        <h3><mark>飛び込み営業は、ありません。</mark></h3>
+        <p>基本は来店型。「Hondaの車が気になって」と足を運んでくださったお客様をお迎えするところから始まります。知らない家のインターホンを押す仕事ではありません。</p>
       </div>
-      <div class="job-card">
-        <div class="ph-box r-16x9">
+      <div class="rc">
+        <div class="ph-box r-3x2" style="margin:-22px -20px 18px">
           <span class="pt">画像予定</span>
-          <span class="pd">整備士の作業カット（ピット内）</span>
+          <span class="pd">カウンターで商談している様子</span>
         </div>
-        <div class="job-b">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 01-5 5L4 17v3h3l5.7-5.7a4 4 0 015-5l-2 2 2.3 2.3 2-2a4 4 0 01-5.3-5.3z"/></svg></div>
-          <div><h3>サービス職（整備）</h3><p>点検・整備・車検。国家資格の取得支援があります。手を動かすのが好きな方へ。</p></div>
+        <span class="n">02</span>
+        <h3><mark>売り込むのではなく、聞く。</mark></h3>
+        <p>お子さんが生まれる。通勤距離が変わる。お客様の生活を伺って、合う一台をご提案する。話を聞くのが好きな人ほど、向いている仕事です。</p>
+      </div>
+      <div class="rc">
+        <div class="ph-box r-3x2" style="margin:-22px -20px 18px">
+          <span class="pt">画像予定</span>
+          <span class="pd">先輩が新人に教えている研修シーン</span>
         </div>
+        <span class="n">03</span>
+        <h3><mark>クルマの知識は、入社後で。</mark></h3>
+        <p>ほとんどの先輩が、知識ゼロからのスタートでした。研修と、隣にいる先輩のサポートがあります。「好き」より「知りたい」があれば十分です。</p>
       </div>
     </div>
-    <a class="more" href="#">詳しい募集要項を見る<span>→</span></a>
-    <p class="cap-n">※ 別ページ、または公式の採用ページへ遷移します</p>
-  </section>
-
-
-  <!-- 1日のスケジュール -->
-  <section class="s oneday" id="oneday">
-    <h2 class="t">入社1年目の、<br>ある1日。</h2>
-    <p class="body">「実際、どんな風に働くんだろう」。いちばん想像しにくいところを、時間割でお見せします。</p>
-
-    <div class="ph-box r-16x9" style="margin-top:20px">
-      <span class="pt">画像予定</span>
-      <span class="pd">朝礼、または開店前の店内の様子</span>
-    </div>
-
-    <div class="day">
-      <div class="dr key">
-        <span class="tm">9:00</span>
-        <h3>出社・朝礼</h3>
-        <p>店舗に出社。その日の来店予定や納車予定を全員で共有します。</p>
-      </div>
-      <div class="dr">
-        <span class="tm">9:30</span>
-        <h3>準備・確認</h3>
-        <p>展示車の点検、商談に使う資料の準備。先輩に相談する時間もここで。</p>
-      </div>
-      <div class="dr key">
-        <span class="tm">10:00</span>
-        <h3>開店・接客</h3>
-        <p>ご来店のお客様を迎えます。最初のうちは先輩と一緒に対応します。</p>
-      </div>
-      <div class="dr">
-        <span class="tm">12:00</span>
-        <h3>休憩</h3>
-        <p>交代で1時間。休憩室で過ごす人も、外に食べに出る人もいます。 <span class="tbd">※内容は確認中</span></p>
-      </div>
-      <div class="dr">
-        <span class="tm">13:00</span>
-        <h3>納車・点検のご案内</h3>
-        <p>ご購入いただいた車のお引き渡しや、点検のご案内を行います。</p>
-      </div>
-      <div class="dr">
-        <span class="tm">16:00</span>
-        <h3>事務作業・お客様へのご連絡</h3>
-        <p>書類の作成や、気になっていらっしゃるお客様へのフォロー。</p>
-      </div>
-      <div class="dr key">
-        <span class="tm">18:30</span>
-        <h3>退勤</h3>
-        <p>平均残業時間は月16.8時間。予定を立てやすい働き方です。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 研修・サポート -->
-  <section class="s training" id="training">
-    <h2 class="t">入社してから、<br>ちゃんと教えます。</h2>
-    <p class="body">知識ゼロで入社した先輩が、どうやって独り立ちしていくのか。入社後の流れをお見せします。</p>
-
+  
+    <h3 class="sub-h">入社してから、ちゃんと教えます。</h3>
     <div class="tr-list">
       <div class="tr-i">
         <span class="when">入社前</span>
@@ -1470,46 +1330,15 @@ section.s{scroll-margin-top:96px}
         </div>
       </div>
     </div>
-
     <div class="tr-note">
       <b>「クルマが好きじゃないと無理ですか？」</b><br>
       いいえ。実際に、免許を取ったばかりで入社した先輩もいます。大切なのは「好き」よりも、お客様の話をきちんと聞けることです。
     </div>
   </section>
-
-  <!-- キャリアパス -->
-  <section class="s career" id="career">
-    <h2 class="t">5年後、10年後の<br>働き方。</h2>
-    <p class="body">平均勤続年数は13.3年。長く働いている人が多いぶん、その先の道もはっきりしています。</p>
-
-    <div class="cp">
-      <div class="cp-i">
-        <div class="yr"><b>1</b><s>年目</s></div>
-        <h3>まず、仕事を覚える</h3>
-        <p>先輩のサポートを受けながら、接客と商談の流れを身につけます。</p>
-      </div>
-      <div class="cp-i">
-        <div class="yr"><b>3</b><s>年目</s></div>
-        <h3>自分のお客様がつく</h3>
-        <p>点検や車検のたびに顔を出してくださる、いわゆる「担当のお客様」が増えてきます。</p>
-      </div>
-      <div class="cp-i">
-        <div class="yr"><b>5</b><s>年目〜</s></div>
-        <h3>後輩を育てる側へ</h3>
-        <p>新入社員の指導役を任されることがあります。チーフなどの役職へ進む道もここから始まります。 <span class="tbd">※内容は確認中</span></p>
-      </div>
-      <div class="cp-i">
-        <div class="yr"><b>10</b><s>年目〜</s></div>
-        <h3>店舗を任される</h3>
-        <p>店長として店舗運営を担うほか、本部での企画や採用に携わる道もあります。 <span class="tbd">※内容は確認中</span></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 福利厚生 -->
-  <section class="s benefits" id="benefits">
-    <h2 class="t">暮らしを支える、<br>会社の制度。</h2>
-    <p class="body">給与や休みだけでなく、生活のうえで実際に効いてくる部分をまとめました。</p>
+  <!-- 募集要項 -->
+  <section class="s req" id="conditions">
+    <h2 class="t">待遇と、条件。</h2>
+    <p class="body">給与や休みだけでなく、生活のうえで実際に効いてくる部分まで、すべて出します。</p>
 
     <div class="bn">
       <div class="bn-i">
@@ -1543,35 +1372,67 @@ section.s{scroll-margin-top:96px}
         <p>取得実績があり、復帰後に時短勤務を選んでいる社員もいます。 <span class="tbd">※内容は確認中</span></p>
       </div>
     </div>
+
+    <h3 class="sub-h">募集要項</h3>
+
+    <div class="rq">
+      <dl><dt>募集職種</dt><dd>営業職 ／ サービス職（整備）</dd></dl>
+      <dl><dt>対象</dt><dd>2027年3月卒業見込みの方<br>（既卒の方もご相談ください）<span class="tbd">※確認中</span></dd></dl>
+      <dl><dt>初任給</dt><dd>267,700円（四大卒・総支給額）<br>＋ インセンティブあり　<span class="tbd">※2026年度実績</span></dd></dl>
+      <dl><dt>賞与</dt><dd>年2回　6.25ヶ月　<span class="tbd">※2026年度実績</span></dd></dl>
+      <dl><dt>勤務地</dt><dd>岡山・広島・山口・香川・愛媛・高知の各店舗<br>ご希望のエリアを選考時にお伝えいただけます</dd></dl>
+      <dl><dt>勤務時間</dt><dd>9:30〜18:30（実働8時間・休憩60分）<br>平均残業時間 月16.8時間<span class="tbd">※確認中</span></dd></dl>
+      <dl><dt>休日休暇</dt><dd>年間休日120日（シフト制・週休2日）<br>夏季・年末年始の連休、有給休暇<span class="tbd">※確認中</span></dd></dl>
+      <dl><dt>待遇・福利厚生</dt><dd>各種社会保険完備、通勤手当、資格取得支援、<br>社員向け車両優待、退職金制度<span class="tbd">※確認中</span></dd></dl>
+      <dl><dt>必要な免許</dt><dd>普通自動車運転免許（入社までに取得／AT限定可）<span class="tbd">※確認中</span></dd></dl>
+    </div>
+  
     <div class="fact fact-s">
       <div class="fact-hd"><b>健康経営優良法人2026</b>に認定されています</div>
       <p>経済産業省と日本健康会議による認定制度で、働く人の健康づくりに取り組む企業として選ばれました。</p>
     </div>
-    <p class="cap-n">※ 制度の詳細は募集要項および選考時にご説明します</p>
   </section>
-
-  <!-- 店舗 -->
-  <section class="s shops" id="shops">
-    <h2 class="t">働く場所を、選べる。</h2>
-    <p class="body">気になる県を選んでください。ご希望のエリアを選考時にお伝えいただけます。</p>
-
-    <div class="ph-box r-16x9" style="margin-top:20px">
-      <span class="pt">画像予定</span>
-      <span class="pd">店舗の外観（代表的な1店舗）</span>
+  <!-- 職種 -->
+  <section class="s" id="positions">
+    <h2 class="t">募集している職種</h2>
+    <div class="jobs">
+      <div class="job-card">
+        <div class="ph-box r-16x9">
+          <span class="pt">画像予定</span>
+          <span class="pd">営業スタッフの接客カット</span>
+        </div>
+        <div class="job-b">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3v13h2a3 3 0 006 0h4a3 3 0 006 0h2v-5l-3-4z"/></svg></div>
+          <div><h3>営業職</h3><p>ご来店いただいたお客様への提案、納車後のフォロー、保険や点検のご案内まで。</p></div>
+        </div>
+      </div>
+      <div class="job-card">
+        <div class="ph-box r-16x9">
+          <span class="pt">画像予定</span>
+          <span class="pd">整備士の作業カット（ピット内）</span>
+        </div>
+        <div class="job-b">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 01-5 5L4 17v3h3l5.7-5.7a4 4 0 015-5l-2 2 2.3 2.3 2-2a4 4 0 01-5.3-5.3z"/></svg></div>
+          <div><h3>サービス職（整備）</h3><p>点検・整備・車検。国家資格の取得支援があります。手を動かすのが好きな方へ。</p></div>
+        </div>
+      </div>
     </div>
-
-    <div class="tabs" role="tablist">
-      <button class="tab" role="tab" aria-selected="true" data-p="岡山">岡山</button>
-      <button class="tab" role="tab" aria-selected="false" data-p="広島">広島</button>
-      <button class="tab" role="tab" aria-selected="false" data-p="山口">山口</button>
-      <button class="tab" role="tab" aria-selected="false" data-p="香川">香川</button>
-      <button class="tab" role="tab" aria-selected="false" data-p="愛媛">愛媛</button>
-      <button class="tab" role="tab" aria-selected="false" data-p="高知">高知</button>
+    <a class="more" href="#">詳しい募集要項を見る<span>→</span></a>
+    <p class="cap-n">※ 別ページ、または公式の採用ページへ遷移します</p>
+  
+    <h3 class="sub-h">勤務地</h3>
+    <div class="map">
+      <div class="map-h">展開エリア（Honda Cars ／ U-Select 計75店舗）</div>
+      <div class="pref">
+        <div>岡山<small>OKAYAMA</small></div>
+        <div>広島<small>HIROSHIMA</small></div>
+        <div>山口<small>YAMAGUCHI</small></div>
+        <div>香川<small>KAGAWA</small></div>
+        <div>愛媛<small>EHIME</small></div>
+        <div>高知<small>KOCHI</small></div>
+      </div>
     </div>
-    <div class="shoplist" id="shoplist"></div>
-    <p class="cap-n">※ 2025年時点の店舗です。最新の情報は公式サイトをご確認ください</p>
   </section>
-
   <!-- 途中のLINE導線 -->
   <div class="line-cut">
     <div class="in">
@@ -1580,9 +1441,6 @@ section.s{scroll-margin-top:96px}
       <p>選考前の情報収集だけでも構いません。エントリーの前に、働き方や仕事内容を気軽に聞いてみてください。</p>
       <a class="btn btn-line" href="#"><svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.64.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.036.194-.36.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg><span class="lbl">採用情報をLINEで受け取る<small>友だち追加はこちら</small></span></a>
     </div>
-  </div>
-
-
   <!-- インタビュー -->
   <section class="s" id="interview">
     <h2 class="t">若手社員に、<br>裏側を聞いてみた。</h2>
@@ -1610,26 +1468,6 @@ section.s{scroll-margin-top:96px}
       </div>
     </div>
   </section>
-
-
-  <!-- 募集要項 -->
-  <section class="s req" id="requirements">
-    <h2 class="t">募集要項</h2>
-    <p class="body">2027年度 新卒採用の募集条件です。</p>
-
-    <div class="rq">
-      <dl><dt>募集職種</dt><dd>営業職 ／ サービス職（整備）</dd></dl>
-      <dl><dt>対象</dt><dd>2027年3月卒業見込みの方<br>（既卒の方もご相談ください）<span class="tbd">※確認中</span></dd></dl>
-      <dl><dt>初任給</dt><dd>267,700円（四大卒・総支給額）<br>＋ インセンティブあり　<span class="tbd">※2026年度実績</span></dd></dl>
-      <dl><dt>賞与</dt><dd>年2回　6.25ヶ月　<span class="tbd">※2026年度実績</span></dd></dl>
-      <dl><dt>勤務地</dt><dd>岡山・広島・山口・香川・愛媛・高知の各店舗<br>ご希望のエリアを選考時にお伝えいただけます</dd></dl>
-      <dl><dt>勤務時間</dt><dd>9:30〜18:30（実働8時間・休憩60分）<br>平均残業時間 月16.8時間<span class="tbd">※確認中</span></dd></dl>
-      <dl><dt>休日休暇</dt><dd>年間休日120日（シフト制・週休2日）<br>夏季・年末年始の連休、有給休暇<span class="tbd">※確認中</span></dd></dl>
-      <dl><dt>待遇・福利厚生</dt><dd>各種社会保険完備、通勤手当、資格取得支援、<br>社員向け車両優待、退職金制度<span class="tbd">※確認中</span></dd></dl>
-      <dl><dt>必要な免許</dt><dd>普通自動車運転免許（入社までに取得／AT限定可）<span class="tbd">※確認中</span></dd></dl>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section class="s" id="faq">
     <h2 class="t">よくある質問</h2>
@@ -1664,7 +1502,6 @@ section.s{scroll-margin-top:96px}
       </details>
     </div>
   </section>
-
   <!-- 選考の流れ -->
   <section class="s flow" id="flow">
     <h2 class="t">選考の流れ</h2>
@@ -1719,38 +1556,7 @@ section.s{scroll-margin-top:96px}
 </div>
 
 <script>
-var SHOPS = {
-  "岡山":{"n":["後楽園店","倉敷笹沖店","倉田店","中島西店","2号バイパス店","岡山高屋店","倉敷中島店","倉敷東塚店","青江店","福富店","西大寺店","中仙道店","岡山中央店","岡山東店"],
-          "u":["岡山西","倉敷","岡山平島"]},
-  "広島":{"n":["大芝店","安佐南大町店","緑井店","可部店","東雲店","大州店","府中店","観音店","西店","五日市店","商工センター店","廿日市店","西条中央店","広東店","呉西中央店","栗原店","東福山店","西福山店","西風新都店"],
-          "u":["祇園","舟入"]},
-  "山口":{"n":["下関宝町店","新下関店","宇部厚南店","宇部神原店","維新公園店","防府西店","防府東店","徳山西店","岩国中央店"],
-          "u":["山口朝田"]},
-  "香川":{"n":["太田店","丸亀北店","香西店","国分寺西店","屋島店","高松中央インター店","春日店","高松東バイパス林店","丸亀田村店","観音寺出作店"],
-          "u":["高松"]},
-  "愛媛":{"n":["松山南環状店","松山北環状店","今治産業道路店","新居浜萩生店","中央店","天山店","上泉店","松山久米店","松山空港通店"],
-          "u":[]},
-  "高知":{"n":["一宮店","いの店","城山店","高知インター店","かづらしま店","野市店"],
-          "u":["高須新町"]}
-};
-function render(p){
-  var d = SHOPS[p], h = '';
-  h += '<div class="sl-h">Honda Cars ' + p + '<span>新車販売 ' + d.n.length + '店舗</span></div>';
-  h += '<div class="chips">' + d.n.map(function(n){ return '<span class="chip">'+n+'</span>'; }).join('') + '</div>';
-  if(d.u.length){
-    h += '<div class="sl-h">U-Select<span>中古車 ' + d.u.length + '店舗</span></div>';
-    h += '<div class="chips">' + d.u.map(function(n){ return '<span class="chip u">'+n+'</span>'; }).join('') + '</div>';
-  }
-  document.getElementById('shoplist').innerHTML = h;
-}
-document.querySelectorAll('.tab').forEach(function(t){
-  t.addEventListener('click', function(){
-    document.querySelectorAll('.tab').forEach(function(x){ x.setAttribute('aria-selected','false'); });
-    t.setAttribute('aria-selected','true');
-    render(t.dataset.p);
-  });
-});
-render('岡山');
+/* 店舗一覧は7セクション版では使わない（勤務地は6県の表示のみ） */
 var bg=document.getElementById('burger'), dw=document.getElementById('drawer');
 if(bg && dw){
   bg.addEventListener('click',function(){
