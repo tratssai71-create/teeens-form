@@ -709,143 +709,64 @@ section.s.nums{margin-top:-1px;margin-bottom:-1px}
 }
 
 
-/* ══════ PC版レイアウト（1024px〜）══════════════════
-   スマホ版を引き伸ばすのではなく、組み直す。
-   ・本文は760pxで読みやすい幅に固定
-   ・写真とグリッドだけ1080pxまで広げて、紙面に強弱をつける
-   ・並ぶ要素は段数を増やす（数字2列→4列、福利厚生2列→3列 など）
-   STUDIO実装：PCブレークポイントで同じ設定を入れれば再現できます。 */
+/* ══════ PC表示：本文はスマホ幅のまま、左右を使う ══════
+   カラムを広げるのをやめ、412pxのまま中央に置く。
+   空いた左右には、版面の設計言語（方眼・赤の罫・通し番号・縦組み）を
+   そのまま大きく展開して、余白を「背景」として成立させる。
+   STUDIO実装：PCブレークポイントで、本文ボックスの幅は変えずに
+   背景ボックスと固定パーツを左右に置くだけ。                      */
 @media (min-width:1024px){
-  body{background:#fff;background-image:none;padding:0}
+  /* 地：方眼を画面全体に広げる */
+  body{
+    background:#dcd9d4;
+    background-image:
+      linear-gradient(rgba(22,24,34,.05) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(22,24,34,.05) 1px,transparent 1px),
+      radial-gradient(64% 40% at 82% 8%,rgba(230,0,18,.07),transparent 62%),
+      radial-gradient(60% 40% at 10% 96%,rgba(30,46,64,.08),transparent 66%);
+    background-size:92px 92px,92px 92px,100% 100%,100% 100%;
+    background-attachment:fixed;
+    padding:40px 0 48px}
+
+  /* 本文はスマホ幅のまま中央に */
+  .phone{max-width:412px;border-radius:22px;
+    box-shadow:0 2px 4px rgba(40,32,28,.1),
+      0 16px 32px -10px rgba(40,32,28,.26),
+      0 54px 96px -30px rgba(40,32,28,.5);
+    outline:1px solid rgba(255,255,255,.72);outline-offset:-1px}
+  .fixed{max-width:412px;bottom:26px;border-radius:16px;
+    box-shadow:0 12px 30px -12px rgba(40,32,28,.45);
+    border:1px solid rgba(40,32,28,.1)}
+
+  /* 既定の縦組み注記は、下の side パーツに置き換える */
   body::before,body::after{display:none}
 
-  .draft{position:fixed;top:0}
-  .phone{max-width:none;width:100%;border-radius:0;box-shadow:none;outline:none;
-    padding-top:34px;background-position:50% 0,50% 0,50% 0,50% 0,0 0,0 0}
+  /* ── 左：社名と赤の罫 ── */
+  .side{position:fixed;top:0;bottom:0;z-index:2;pointer-events:none;
+    display:flex;flex-direction:column;justify-content:center;gap:22px}
+  .side-l{left:max(30px,calc(50% - 560px))}
+  .side-l .rule{width:1px;flex:0 0 120px;
+    background:linear-gradient(180deg,var(--red),rgba(22,24,34,.2))}
+  .side-l .vt{writing-mode:vertical-rl;font-size:10px;font-weight:700;
+    letter-spacing:.3em;color:rgba(40,32,28,.42)}
+  .side-l .vt b{color:var(--red)}
 
-  /* ── ヘッダー ── */
-  .hdr{top:34px;padding:26px 48px}
-  .hdr-logo{padding:11px 18px}
-  .hdr-logo .pn{font-size:13px}
-  .sns{width:40px;height:40px}
-  .sns svg{width:20px;height:20px}
-  .burger{width:44px;height:40px}
-  .drawer{position:fixed;inset:34px 0 0;padding:120px 48px 60px}
-  .drawer a.mi{font-size:22px;padding:18px 0;max-width:820px;margin:0 auto}
-  .drawer .d-cta{max-width:820px;margin:32px auto 0;flex-direction:row;gap:12px}
-  .drawer .d-cta .btn{flex:1}
+  /* ── 右：いま見ているセクションを大きく出す ── */
+  .side-r{right:max(30px,calc(50% - 560px));align-items:flex-end;text-align:right}
+  .side-r .num{font-family:var(--num);font-size:150px;font-weight:700;line-height:.78;
+    color:transparent;-webkit-text-stroke:1.5px rgba(22,24,34,.22);
+    transition:opacity .4s ease}
+  .side-r .nm{font-size:11px;font-weight:700;letter-spacing:.26em;
+    color:rgba(40,32,28,.5);transition:opacity .4s ease}
+  .side-r .bar{width:44px;height:2px;background:var(--red)}
+  .side-r .of{font-family:var(--num);font-size:12px;font-weight:600;
+    letter-spacing:.14em;color:rgba(40,32,28,.34)}
+  .side.fade .num,.side.fade .nm{opacity:0}
 
-  /* ── ヒーロー ── */
-  .fv{min-height:88vh;padding-bottom:64px}
-  .fv-in{max-width:1080px;margin:0 auto;padding:0 48px 40px;width:100%}
-  .fv h1{font-size:68px;line-height:1.2;letter-spacing:-.025em;margin-bottom:24px;max-width:15em}
-  .fv p{font-size:17px;line-height:2}
-  .fv-eyebrow{font-size:12px;margin-bottom:28px}
-  .fv-act{margin-top:40px;padding-top:26px;max-width:620px}
-  .fv-live{font-size:13.5px;margin-bottom:20px}
-  .lk{height:56px;padding:0 26px;font-size:15px}
-  .fv-note{left:48px;top:128px;font-size:11px;max-width:460px}
-  .fv-vtag{left:48px;top:96px}.fv-mute{right:48px;top:96px}
-  .fv-band{height:5px;top:210px}
-  .fv-grid{background-size:74px 74px}
-
-  /* ── セクションの版面 ── */
-  section.s{padding:118px 0;counter-increment:sec}
-  section.s>*:not(.grain):not(.glow):not(.s-rule){
-    max-width:760px;margin-left:auto;margin-right:auto;padding-left:48px;padding-right:48px;width:100%}
-  /* 写真と一覧は広く使う */
-  section.s>.ph-box:not(.grain):not(.glow):not(.s-rule),section.s>.ngrid:not(.grain):not(.glow):not(.s-rule),section.s>.reason:not(.grain):not(.glow):not(.s-rule),section.s>.jobs:not(.grain):not(.glow):not(.s-rule),section.s>.iv:not(.grain):not(.glow):not(.s-rule),
-  section.s>.bn:not(.grain):not(.glow):not(.s-rule),section.s>.cp:not(.grain):not(.glow):not(.s-rule),section.s>.tr-list:not(.grain):not(.glow):not(.s-rule),section.s>.map:not(.grain):not(.glow):not(.s-rule),section.s>.rq:not(.grain):not(.glow):not(.s-rule),
-  section.s>.shoplist:not(.grain):not(.glow):not(.s-rule),section.s>.tabs:not(.grain):not(.glow):not(.s-rule),section.s>.day:not(.grain):not(.glow):not(.s-rule),section.s>.steps:not(.grain):not(.glow):not(.s-rule),section.s>.faq:not(.grain):not(.glow):not(.s-rule){
-    max-width:1080px}
-  section.s::before{left:calc(50% - 540px + 20px)}
-  section.s::after{font-size:150px;top:70px;right:calc(50% - 540px + 24px)}
-  .s-rule{left:calc(50% - 540px);right:calc(50% - 540px)}
-
-  /* ── 文字の大きさ ── */
-  /* .lab は inline-flex のため auto余白で中央寄せできない。
-     ブロック化して本文と同じ版面に揃える */
-  section.s>.lab{display:flex;justify-content:flex-start;align-items:center;
-    font-size:11px;margin-bottom:18px}
-  .last .lab{font-size:11px;margin-bottom:18px}
-  h2.t{font-size:42px;line-height:1.44;margin-bottom:24px}
-  .body{font-size:16px;line-height:2.05}
-  .cap-n{font-size:12px}
-
-  /* ── 並びの段数を増やす ── */
-  .pref{grid-template-columns:repeat(6,1fr)}
-  .reason{flex-direction:row;gap:22px;margin-top:40px}
-  .reason .rc{flex:1;padding:26px 24px}
-  .reason .rc .ph-box{margin:-26px -24px 22px}
-  .ngrid{grid-template-columns:repeat(4,1fr);margin-top:40px}
-  .ncell{padding:30px 18px}
-  .ncell.wide{grid-column:span 2}
-  .ncell .v{font-size:52px}
-  .ncell.wide .v{font-size:66px}
-  .jobs{flex-direction:row;gap:18px;margin-top:36px}
-  .jobs .job-card{flex:1}
-  .iv{flex-direction:row;gap:18px;margin-top:36px}
-  .iv .vid{flex:1}
-  .bn{grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
-  .bn-i{padding:22px 20px}
-  .cp{flex-direction:row;gap:14px;margin-top:36px}
-  .cp .cp-i{flex:1}
-  .tr-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px}
-  .tr-note{grid-column:1 / -1}
-  .shoplist{columns:2;column-gap:0}
-  .shop{break-inside:avoid}
-  .more{max-width:420px;margin-left:auto;margin-right:auto}
-
-  /* 1日の流れ・選考の流れは中央寄せの読み物として */
-  .day,.steps{max-width:760px}
-
-  /* 募集要項は横に広げて読みやすく */
-  .rq dt{width:180px;padding:20px 0 20px 28px;font-size:13px}
-  .rq dd{padding:20px 28px 20px 16px;font-size:14px}
-
-  /* 代表メッセージ */
-  .msg-body{font-size:17px;line-height:2.15}
-  .msg-q{font-size:104px}
-
-  /* ── 最終CTA・フッター ── */
-  .last{padding:120px 0 100px}
-  .last>*:not(.grain):not(.glow){max-width:760px;margin-left:auto;margin-right:auto;
-    padding-left:48px;padding-right:48px;width:100%}
-  .last>.ph-box{max-width:1080px}
-  .last h2{font-size:44px}
-  .last p{font-size:16px}
-  .last .btns{flex-direction:row;gap:14px;max-width:660px}
-  .last .btns .btn{flex:1}
-  .qr{max-width:560px}
-  .ft{padding:70px 0 60px}
-  .ft>*{max-width:1080px;margin:0 auto;padding-left:48px;padding-right:48px}
-  .ft-nav{grid-template-columns:repeat(4,1fr)}
-
-  /* ── 常時表示のCTAは、右下に浮かせる ── */
-  .fixed{left:auto;right:30px;bottom:30px;max-width:none;width:auto;
-    padding:10px;border-radius:18px;gap:10px;
-    box-shadow:0 18px 40px -14px rgba(20,20,30,.4);border:1px solid rgba(20,20,30,.1)}
-  .fixed .btn{flex:0 0 auto;padding:14px 22px;font-size:14px}
-  .fixed .btn small{font-size:10.5px}
-
-  /* 出現モーションの移動量も、画面が広いぶん少し大きく */
-  .js-rv [data-rv="up"]{transform:translateY(56px)}
-  .js-rv [data-rv="left"]{transform:translateX(-72px)}
-  .js-rv [data-rv="right"]{transform:translateX(72px)}
+  /* 画面が狭いと本体に重なるので、そのときは隠す */
+  @media (max-width:1180px){ .side{display:none} }
 }
-
-/* 1400px以上は、版面をもう少しだけ広げる */
-@media (min-width:1400px){
-  section.s>*:not(.grain):not(.glow):not(.s-rule){max-width:820px}
-  section.s>.ph-box:not(.grain):not(.glow):not(.s-rule),section.s>.ngrid:not(.grain):not(.glow):not(.s-rule),section.s>.reason:not(.grain):not(.glow):not(.s-rule),section.s>.jobs:not(.grain):not(.glow):not(.s-rule),section.s>.iv:not(.grain):not(.glow):not(.s-rule),
-  section.s>.bn:not(.grain):not(.glow):not(.s-rule),section.s>.cp:not(.grain):not(.glow):not(.s-rule),section.s>.tr-list:not(.grain):not(.glow):not(.s-rule),section.s>.map:not(.grain):not(.glow):not(.s-rule),section.s>.rq:not(.grain):not(.glow):not(.s-rule),
-  section.s>.shoplist:not(.grain):not(.glow):not(.s-rule),section.s>.tabs:not(.grain):not(.glow):not(.s-rule),section.s>.faq:not(.grain):not(.glow):not(.s-rule){max-width:1180px}
-  section.s::before{left:calc(50% - 590px + 20px)}
-  section.s::after{right:calc(50% - 590px + 24px)}
-  .s-rule{left:calc(50% - 590px);right:calc(50% - 590px)}
-  .fv-in{max-width:1180px}
-  .fv h1{font-size:76px}
-}
+@media (max-width:1023px){ .side{display:none} }
 
 /* ══════ 安心感ベース（配色は元のまま）════════════
    色は Honda赤 #E60012 ／ 黒 #101014 ／ 白 をそのまま使用。
@@ -948,6 +869,21 @@ section.s.nums{background:linear-gradient(172deg,#17171d 0%,#101014 100%)}
 <body>
 
 <div class="draft">DESIGN DRAFT ／ デザイン案 <b>推し3 余白重視</b> ／ 株式会社TeeenS</div>
+
+
+<!-- PC表示のとき、左右の余白に出るパーツ -->
+<div class="side side-l" aria-hidden="true">
+  <span class="rule"></span>
+  <span class="vt">HONDA MOBILITY CHUSHIKOKU</span>
+  <span class="vt"><b>RECRUIT 2027</b></span>
+  <span class="rule"></span>
+</div>
+<div class="side side-r" id="sideR" aria-hidden="true">
+  <span class="num">01</span>
+  <span class="bar"></span>
+  <span class="nm">ABOUT US</span>
+  <span class="of">／ 14</span>
+</div>
 
 <div class="phone">
 
@@ -1663,6 +1599,36 @@ document.querySelectorAll('.qa summary').forEach(function(s){
   var fv=document.querySelector('.fv');
   if(fv) requestAnimationFrame(function(){ setTimeout(function(){ fv.classList.add('go'); }, 60); });
 })();
+
+/* ══ PC：右側の表示を、いま見ているセクションに追従させる ══ */
+(function(){
+  var box=document.getElementById('sideR');
+  if(!box) return;
+  var num=box.querySelector('.num'), nm=box.querySelector('.nm'), of=box.querySelector('.of');
+  var secs=[].slice.call(document.querySelectorAll('section.s'));
+  if(!secs.length) return;
+  of.textContent='／ '+secs.length;
+
+  var cur=-1;
+  function set(i){
+    if(i===cur) return;
+    cur=i;
+    box.classList.add('fade');
+    setTimeout(function(){
+      num.textContent=('0'+(i+1)).slice(-2);
+      var lab=secs[i].querySelector('.lab');
+      nm.textContent=lab?lab.textContent.trim():'';
+      box.classList.remove('fade');
+    },200);
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting) set(secs.indexOf(e.target));
+    });
+  },{rootMargin:'-45% 0px -45% 0px',threshold:0});
+  secs.forEach(function(x){ io.observe(x); });
+})();
+
 </script>
 </body>
 </html>
