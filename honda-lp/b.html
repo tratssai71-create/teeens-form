@@ -761,14 +761,30 @@ section.s.nums{margin-top:-1px;margin-bottom:-1px}
     outline-color:rgba(255,255,255,.14)}
   body.has-bg .side-l .vt{color:rgba(255,255,255,.5)}
   body.has-bg .side-l .rule{background:linear-gradient(180deg,var(--red),rgba(255,255,255,.18))}
-  body.has-bg .side-r .num{-webkit-text-stroke:1.5px rgba(255,255,255,.3)}
-  body.has-bg .side-r .nm{color:rgba(255,255,255,.62)}
-  body.has-bg .side-r .of{color:rgba(255,255,255,.4)}
   body.has-bg .fixed{border-color:rgba(255,255,255,.14)}
 
   .phone,.side{z-index:2}
 }
 @media (prefers-reduced-motion:reduce){ .bg-stage video{display:none} }
+
+
+/* ── 右の余白：セクションごとの番号（ページと一緒に流れる）── */
+.sec-rail{display:none}
+@media (min-width:1024px){
+  body{position:relative}
+  .sec-rail{display:block;position:absolute;top:0;left:0;right:0;
+    z-index:1;pointer-events:none}
+  .sec-mark{position:absolute;left:calc(50% + 250px);
+    display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+  .sec-mark .n{font-family:var(--num);font-size:132px;font-weight:700;line-height:.76;
+    color:transparent;-webkit-text-stroke:1.5px rgba(22,24,34,.2)}
+  .sec-mark .bar{width:40px;height:2px;background:var(--red)}
+  .sec-mark .t{font-size:10.5px;font-weight:700;letter-spacing:.26em;
+    color:rgba(40,32,28,.5)}
+  body.has-bg .sec-mark .n{-webkit-text-stroke:1.5px rgba(255,255,255,.28)}
+  body.has-bg .sec-mark .t{color:rgba(255,255,255,.58)}
+}
+@media (max-width:1180px){ .sec-rail{display:none} }
 
 /* ══════ PC表示：本文はスマホ幅のまま、左右を使う ══════
    カラムを広げるのをやめ、412pxのまま中央に置く。
@@ -813,16 +829,6 @@ section.s.nums{margin-top:-1px;margin-bottom:-1px}
   .side-l .vt b{color:var(--red)}
 
   /* ── 右：いま見ているセクションを大きく出す ── */
-  .side-r{right:max(30px,calc(50% - 560px));align-items:flex-end;text-align:right}
-  .side-r .num{font-family:var(--num);font-size:150px;font-weight:700;line-height:.78;
-    color:transparent;-webkit-text-stroke:1.5px rgba(22,24,34,.22);
-    transition:opacity .4s ease}
-  .side-r .nm{font-size:11px;font-weight:700;letter-spacing:.26em;
-    color:rgba(40,32,28,.5);transition:opacity .4s ease}
-  .side-r .bar{width:44px;height:2px;background:var(--red)}
-  .side-r .of{font-family:var(--num);font-size:12px;font-weight:600;
-    letter-spacing:.14em;color:rgba(40,32,28,.34)}
-  .side.fade .num,.side.fade .nm{opacity:0}
 
   /* 画面が狭いと本体に重なるので、そのときは隠す */
   @media (max-width:1180px){ .side{display:none} }
@@ -974,6 +980,8 @@ section.s:nth-of-type(2) [data-rv="wipe"].wipe-key::before{background:var(--red)
   <div class="mesh"></div>
 </div>
 
+<div class="sec-rail" id="secRail" aria-hidden="true"></div>
+
 <!-- PC表示のとき、左右の余白に出るパーツ -->
 <div class="side side-l" aria-hidden="true">
   <span class="rule"></span>
@@ -981,12 +989,7 @@ section.s:nth-of-type(2) [data-rv="wipe"].wipe-key::before{background:var(--red)
   <span class="vt"><b>RECRUIT 2027</b></span>
   <span class="rule"></span>
 </div>
-<div class="side side-r" id="sideR" aria-hidden="true">
-  <span class="num">01</span>
-  <span class="bar"></span>
-  <span class="nm">ABOUT US</span>
-  <span class="of">／ 14</span>
-</div>
+
 
 <div class="phone">
 
@@ -1709,33 +1712,37 @@ document.querySelectorAll('.qa summary').forEach(function(s){
   if(fv) requestAnimationFrame(function(){ setTimeout(function(){ fv.classList.add('go'); }, 60); });
 })();
 
-/* ══ PC：右側の表示を、いま見ているセクションに追従させる ══ */
+/* ══ PC：セクションごとに番号を1枚ずつ、右の余白に置く ══════
+   JSで中身を書き換えるのではなく、各セクションが自分の番号を持ち、
+   ページと一緒に流れていくだけ。STUDIOでは、各セクションの中に
+   番号のボックスを置くだけで同じ形になる（コード不要）。      */
 (function(){
-  var box=document.getElementById('sideR');
-  if(!box) return;
-  var num=box.querySelector('.num'), nm=box.querySelector('.nm'), of=box.querySelector('.of');
+  var rail=document.getElementById('secRail');
+  if(!rail) return;
   var secs=[].slice.call(document.querySelectorAll('section.s'));
   if(!secs.length) return;
-  of.textContent='／ '+secs.length;
 
-  var cur=-1;
-  function set(i){
-    if(i===cur) return;
-    cur=i;
-    box.classList.add('fade');
-    setTimeout(function(){
-      num.textContent=('0'+(i+1)).slice(-2);
-      var lab=secs[i].querySelector('.lab');
-      nm.textContent=lab?lab.textContent.trim():'';
-      box.classList.remove('fade');
-    },200);
-  }
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(e.isIntersecting) set(secs.indexOf(e.target));
+  secs.forEach(function(sec,i){
+    var lab=sec.querySelector('.lab');
+    var el=document.createElement('div');
+    el.className='sec-mark';
+    el.innerHTML='<span class="n">'+('0'+(i+1)).slice(-2)+'</span>'+
+                 '<span class="bar"></span>'+
+                 '<span class="t">'+(lab?lab.textContent.trim():'')+'</span>';
+    rail.appendChild(el);
+    sec._mark=el;
+  });
+
+  function place(){
+    secs.forEach(function(sec){
+      var r=sec.getBoundingClientRect();
+      sec._mark.style.top=Math.round(r.top+window.scrollY+40)+'px';
     });
-  },{rootMargin:'-45% 0px -45% 0px',threshold:0});
-  secs.forEach(function(x){ io.observe(x); });
+  }
+  place();
+  window.addEventListener('resize',place);
+  window.addEventListener('load',place);
+  setTimeout(place,600);
 })();
 
 
