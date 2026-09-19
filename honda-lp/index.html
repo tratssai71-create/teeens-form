@@ -574,6 +574,9 @@ section.s.nums{margin-top:-1px;margin-bottom:-1px}
 /* FAQ */
 .faq{margin-top:22px;border-top:1px solid var(--line)}
 .qa{border-bottom:1px solid var(--line)}
+.qa summary{list-style:none;display:block;cursor:pointer}
+.qa summary::marker{content:''}
+.qa summary::-webkit-details-marker{display:none}
 .qa button{width:100%;display:flex;align-items:center;gap:13px;padding:17px 2px;text-align:left;font-size:13.5px;font-weight:700;line-height:1.6}
 .qa .q{color:var(--red);font-family:var(--num);font-size:20px;font-weight:700;flex:none;line-height:1}
 .qa .mk{margin-left:auto;width:13px;height:13px;position:relative;flex:none}
