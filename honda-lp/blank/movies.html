@@ -42,25 +42,90 @@ body{font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased}
 <div class="row" id="row"></div>
 
 <script>
-/* ▼ URL を差し替えるのはここだけ ───────────────── */
+/* ██████████████████████████████████████████████████████████
+   ██                                                      ██
+   ██   ここだけ触ります。下の ███ より下は触らないこと。   ██
+   ██                                                      ██
+   ██   差し替え方                                          ██
+   ██   1. STUDIOに Video を1つ置いて動画をアップ            ██
+   ██   2. 右パネルの「URL」欄を全部コピー                   ██
+   ██   3. 下の  mp4: 'ここ'  の ' ' の中だけを上書き        ██
+   ██   4. 画像も同じ手順で  img: 'ここ'  に貼る             ██
+   ██                                                      ██
+   ██   ' （シングルクォート）は消さないでください。         ██
+   ██                                                      ██
+   ██████████████████████████████████████████████████████████ */
+
 var DATA = [
- { mp4:'https://tratssai71-create.github.io/teeens-form/honda-lp/v1-boshu.mp4',
-   img:'https://tratssai71-create.github.io/teeens-form/honda-lp/v1-boshu-poster.jpg',
-   time:'0:59', title:'給与も休みも、<br>まとめて。', desc:'飛び込み営業のこと、お金のこと。' },
+/* ══════════════════════════════════════════════════════════
+   ①  1本目　／　募集訴求　／　0:59
+   ══════════════════════════════════════════════════════════ */
+  {
+    /* ---- 動画のURL ------------------------------------- */
+    mp4 : 'https://tratssai71-create.github.io/teeens-form/honda-lp/v1-boshu.mp4',
 
- { mp4:'https://tratssai71-create.github.io/teeens-form/honda-lp/v2-vlog.mp4',
-   img:'https://tratssai71-create.github.io/teeens-form/honda-lp/v2-vlog-poster.jpg',
-   time:'1:01', title:'営業の1日を、<br>そのまま。', desc:'出社から退勤まで、まるごと追いかけました。' },
+    /* ---- ポスター画像のURL（再生前に出る絵） ------------ */
+    img : 'https://tratssai71-create.github.io/teeens-form/honda-lp/v1-boshu-poster.jpg',
 
- { mp4:'https://tratssai71-create.github.io/teeens-form/honda-lp/v3-riyu.mp4',
-   img:'https://tratssai71-create.github.io/teeens-form/honda-lp/v3-riyu-poster.jpg',
-   time:'1:01', title:'選んだ理由を、<br>聞きました。', desc:'なぜここだったのか。社員それぞれの言葉で。' },
+    /* ---- 以下は文言。URLではありません ------------------ */
+    time  : '0:59',
+    title : '給与も休みも、<br>まとめて。',
+    desc  : '飛び込み営業のこと、お金のこと。'
+  },
 
- { mp4:'https://tratssai71-create.github.io/teeens-form/honda-lp/v4-urakawa.mp4',
-   img:'https://tratssai71-create.github.io/teeens-form/honda-lp/v4-urakawa-poster.jpg',
-   time:'1:17', title:'面接では、<br>聞けないことを。', desc:'社内の雰囲気、同期との関係、ノルマのこと。' }
+/* ══════════════════════════════════════════════════════════
+   ②  2本目　／　1日ブイログ　／　1:01
+   ══════════════════════════════════════════════════════════ */
+  {
+    /* ---- 動画のURL ------------------------------------- */
+    mp4 : 'https://tratssai71-create.github.io/teeens-form/honda-lp/v2-vlog.mp4',
+
+    /* ---- ポスター画像のURL（再生前に出る絵） ------------ */
+    img : 'https://tratssai71-create.github.io/teeens-form/honda-lp/v2-vlog-poster.jpg',
+
+    /* ---- 以下は文言。URLではありません ------------------ */
+    time  : '1:01',
+    title : '営業の1日を、<br>そのまま。',
+    desc  : '出社から退勤まで、まるごと追いかけました。'
+  },
+
+/* ══════════════════════════════════════════════════════════
+   ③  3本目　／　入社理由　／　1:01
+   ══════════════════════════════════════════════════════════ */
+  {
+    /* ---- 動画のURL ------------------------------------- */
+    mp4 : 'https://tratssai71-create.github.io/teeens-form/honda-lp/v3-riyu.mp4',
+
+    /* ---- ポスター画像のURL（再生前に出る絵） ------------ */
+    img : 'https://tratssai71-create.github.io/teeens-form/honda-lp/v3-riyu-poster.jpg',
+
+    /* ---- 以下は文言。URLではありません ------------------ */
+    time  : '1:01',
+    title : '選んだ理由を、<br>聞きました。',
+    desc  : 'なぜここだったのか。社員それぞれの言葉で。'
+  },
+
+/* ══════════════════════════════════════════════════════════
+   ④  4本目　／　裏側　／　1:17
+   ══════════════════════════════════════════════════════════ */
+  {
+    /* ---- 動画のURL ------------------------------------- */
+    mp4 : 'https://tratssai71-create.github.io/teeens-form/honda-lp/v4-urakawa.mp4',
+
+    /* ---- ポスター画像のURL（再生前に出る絵） ------------ */
+    img : 'https://tratssai71-create.github.io/teeens-form/honda-lp/v4-urakawa-poster.jpg',
+
+    /* ---- 以下は文言。URLではありません ------------------ */
+    time  : '1:17',
+    title : '面接では、<br>聞けないことを。',
+    desc  : '社内の雰囲気、同期との関係、ノルマのこと。'
+  }
+
 ];
-/* ▲ ここまで ──────────────────────────────── */
+
+/* ███████████████████████████████████████████████████████████
+   ██   ここから下は触らないでください                      ██
+   ███████████████████████████████████████████████████████████ */
 
 document.getElementById('row').innerHTML = DATA.map(function(v){
   return '<div class="mv"><div class="th">'
