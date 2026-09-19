@@ -1381,10 +1381,11 @@ section.s.company{background:#fff}
 
 /* ══════ 動画セクション（縦型・2列）══════════════════ */
 section.s.movies{background:#f7f4f2}
-.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 9px;margin-top:22px}
-.mv{display:flex;flex-direction:column}
-.mv-th{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;
-  background:#ddd7d3;box-shadow:0 6px 18px -12px rgba(35,24,21,.5)}
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 12px;margin-top:24px}
+.mv{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+  border-radius:16px;overflow:hidden;box-shadow:0 14px 28px -18px rgba(20,20,20,.28)}
+.mv-th{position:relative;aspect-ratio:9/16;overflow:hidden;background:#ddd7d3}
+.mv-tx{padding:12px 12px 14px;display:flex;flex-direction:column;flex:1}
 .mv-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .mv-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
   width:46px;height:46px;border-radius:50%;border:0;cursor:pointer;
@@ -1398,8 +1399,8 @@ section.s.movies{background:#f7f4f2}
   font-size:11px;font-weight:700;letter-spacing:.02em;padding:3px 8px;border-radius:999px;
   backdrop-filter:blur(3px)}
 .mv-th.playing .mv-time{display:none}
-.mv-t{font-size:14px;font-weight:700;line-height:1.5;color:var(--ink);margin-top:10px}
-.mv-d{font-size:12px;line-height:1.6;color:var(--ink2);margin-top:5px}
+.mv-t{font-size:14px;font-weight:700;line-height:1.5;color:var(--ink);margin-top:0}
+.mv-d{font-size:12px;line-height:1.6;color:var(--ink2);margin-top:6px}
 
 </style>
 </head>
@@ -1719,8 +1720,8 @@ section.s.movies{background:#f7f4f2}
           <button class="mv-play" type="button" aria-label="再生"></button>
           <span class="mv-time">0:59</span>
         </div>
-        <h3 class="mv-t">給与も休みも、まとめて。</h3>
-        <p class="mv-d">飛び込み営業のこと、お金のこと。1分で話しています。</p>
+        <div class="mv-tx"><h3 class="mv-t">給与も休みも、まとめて。</h3>
+        <p class="mv-d">飛び込み営業のこと、お金のこと。1分で話しています。</p></div>
       </div>
       <div class="mv">
         <div class="mv-th">
@@ -1731,8 +1732,8 @@ section.s.movies{background:#f7f4f2}
           <button class="mv-play" type="button" aria-label="再生"></button>
           <span class="mv-time">1:01</span>
         </div>
-        <h3 class="mv-t">営業の1日を、そのまま。</h3>
-        <p class="mv-d">出社から退勤まで、まるごと追いかけました。</p>
+        <div class="mv-tx"><h3 class="mv-t">営業の1日を、そのまま。</h3>
+        <p class="mv-d">出社から退勤まで、まるごと追いかけました。</p></div>
       </div>
       <div class="mv">
         <div class="mv-th">
@@ -1743,8 +1744,8 @@ section.s.movies{background:#f7f4f2}
           <button class="mv-play" type="button" aria-label="再生"></button>
           <span class="mv-time">1:01</span>
         </div>
-        <h3 class="mv-t">選んだ理由を、聞きました。</h3>
-        <p class="mv-d">なぜここだったのか。社員それぞれの言葉で。</p>
+        <div class="mv-tx"><h3 class="mv-t">選んだ理由を、聞きました。</h3>
+        <p class="mv-d">なぜここだったのか。社員それぞれの言葉で。</p></div>
       </div>
       <div class="mv">
         <div class="mv-th">
@@ -1755,8 +1756,8 @@ section.s.movies{background:#f7f4f2}
           <button class="mv-play" type="button" aria-label="再生"></button>
           <span class="mv-time">1:17</span>
         </div>
-        <h3 class="mv-t">面接では聞けないことを。</h3>
-        <p class="mv-d">社内の雰囲気、同期との関係、ノルマのこと。</p>
+        <div class="mv-tx"><h3 class="mv-t">面接では聞けないことを。</h3>
+        <p class="mv-d">社内の雰囲気、同期との関係、ノルマのこと。</p></div>
       </div>
     </div>
     <p class="cap-n">※ 音が出ます</p>
