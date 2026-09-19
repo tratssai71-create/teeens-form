@@ -1394,11 +1394,12 @@ section.s.movies{background:#f7f4f2}
   border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
 .mv-play:hover{transform:translate(-50%,-50%) scale(1.08)}
 .mv-th.playing .mv-play{display:none}
-.mv-badge{position:absolute;top:9px;left:9px;background:var(--red);color:#fff;
-  font-size:11px;font-weight:700;letter-spacing:.02em;padding:3px 8px;border-radius:999px}
-.mv-th.playing .mv-badge{display:none}
+.mv-time{position:absolute;right:9px;bottom:9px;background:rgba(20,14,12,.72);color:#fff;
+  font-size:11px;font-weight:700;letter-spacing:.02em;padding:3px 8px;border-radius:999px;
+  backdrop-filter:blur(3px)}
+.mv-th.playing .mv-time{display:none}
 .mv-t{font-size:13px;font-weight:700;line-height:1.5;color:var(--ink);margin-top:9px}
-.mv-d{font-size:11px;line-height:1.6;color:var(--ink3);margin-top:3px}
+.mv-d{font-size:11px;line-height:1.65;color:var(--ink3);margin-top:4px}
 
 </style>
 </head>
@@ -1705,8 +1706,8 @@ section.s.movies{background:#f7f4f2}
   </div>
   <!-- 動画 -->
   <section class="s movies" id="movies">
-    <h2 class="t">4本の動画で、<br>だいたい分かります。</h2>
-    <p class="body">文章より早いので、気になるものから見てください。SNSに上げているものと同じです。</p>
+    <h2 class="t">社員が、<br>自分の言葉で。</h2>
+    <p class="body">文章にすると、どうしても綺麗になりすぎます。そのまま話してもらいました。気になるものから、どうぞ。</p>
 
     <div class="mv-grid">
       <div class="mv">
@@ -1716,10 +1717,10 @@ section.s.movies{background:#f7f4f2}
             <source src="v1-boshu.mp4" type="video/mp4">
           </video>
           <button class="mv-play" type="button" aria-label="再生"></button>
-          <span class="mv-badge">Instagram</span>
+          <span class="mv-time">0:59</span>
         </div>
-        <h3 class="mv-t">1分でわかる、うちの会社</h3>
-        <p class="mv-d">飛び込み営業がないこと、給与のこと。まとめて話しています。</p>
+        <h3 class="mv-t">給与も休みも、まとめて。</h3>
+        <p class="mv-d">飛び込み営業のこと、お金のこと。1分で話しています。</p>
       </div>
       <div class="mv">
         <div class="mv-th">
@@ -1728,10 +1729,10 @@ section.s.movies{background:#f7f4f2}
             <source src="v2-vlog.mp4" type="video/mp4">
           </video>
           <button class="mv-play" type="button" aria-label="再生"></button>
-          <span class="mv-badge">TikTok</span>
+          <span class="mv-time">1:01</span>
         </div>
-        <h3 class="mv-t">営業スタッフの、ある1日</h3>
-        <p class="mv-d">出社から退勤まで。実際の1日を追いかけました。</p>
+        <h3 class="mv-t">営業の1日を、そのまま。</h3>
+        <p class="mv-d">出社から退勤まで、まるごと追いかけました。</p>
       </div>
       <div class="mv">
         <div class="mv-th">
@@ -1740,10 +1741,10 @@ section.s.movies{background:#f7f4f2}
             <source src="v3-riyu.mp4" type="video/mp4">
           </video>
           <button class="mv-play" type="button" aria-label="再生"></button>
-          <span class="mv-badge">Instagram</span>
+          <span class="mv-time">1:01</span>
         </div>
-        <h3 class="mv-t">なぜ、ここを選んだのか</h3>
-        <p class="mv-d">入社した理由を、社員それぞれの言葉で。</p>
+        <h3 class="mv-t">選んだ理由を、聞きました。</h3>
+        <p class="mv-d">なぜここだったのか。社員それぞれの言葉で。</p>
       </div>
       <div class="mv">
         <div class="mv-th">
@@ -1752,13 +1753,13 @@ section.s.movies{background:#f7f4f2}
             <source src="v4-urakawa.mp4" type="video/mp4">
           </video>
           <button class="mv-play" type="button" aria-label="再生"></button>
-          <span class="mv-badge">Instagram</span>
+          <span class="mv-time">1:17</span>
         </div>
-        <h3 class="mv-t">若手社員に、裏側を聞いた</h3>
-        <p class="mv-d">面接では聞きにくいことを、先に答えておきます。</p>
+        <h3 class="mv-t">面接では聞けないことを。</h3>
+        <p class="mv-d">社内の雰囲気、同期との関係、ノルマのこと。</p>
       </div>
     </div>
-    <p class="cap-n">※ 音が出ます。イヤホンをお使いください</p>
+    <p class="cap-n">※ 音が出ます</p>
   </section>
   <!-- FAQ -->
   <section class="s" id="faq">
