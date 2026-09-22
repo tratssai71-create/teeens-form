@@ -1441,42 +1441,40 @@ section.s.movies{background:#f7f4f2}
     rgba(15,11,10,.66) 44%, rgba(15,11,10,.90) 58%, rgba(15,11,10,.97) 74%,
     rgba(15,11,10,.99) 88%, rgba(15,11,10,1) 100%)}
 
-.fv-in{position:relative;z-index:3;padding:118px 22px 0;text-align:center}
+.fv-in{position:relative;z-index:3;padding:150px 22px 0;text-align:left}
 .fv-act{position:relative;z-index:3;padding:20px 16px 0}
 
-.fv-eyebrow{display:inline-flex;align-items:center;gap:8px;
-  background:#120c0a;color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;
-  padding:5px 12px 6px;border-radius:6px}
+.fv-eyebrow{display:inline-flex;align-items:center;gap:10px;
+  color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;
+  text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.fv-eyebrow::before{content:'';width:22px;height:2px;background:var(--red);flex:none}
 
-.fv h1{margin-top:12px;font-size:32px;font-weight:900;line-height:1.28;
-  letter-spacing:-.02em}
-.fv h1 .bd{display:inline-block;padding:6px 13px 9px;border-radius:6px;
-  box-shadow:4px 4px 0 rgba(0,0,0,.28)}
-.fv h1 .bd-k{background:#141414;color:#fff}
-.fv h1 .bd-r{background:var(--red);color:#fff;margin-top:8px}
-.fv h1 .bd-r em{font-style:normal;color:#fff}
+.fv h1{margin-top:12px;font-size:34px;font-weight:900;line-height:1.28;
+  letter-spacing:-.02em;color:#fff;
+  text-shadow:0 2px 16px rgba(0,0,0,.7),0 1px 4px rgba(0,0,0,.9)}
+.fv h1 em{font-style:normal;color:var(--red)}
 
 .fv .fv-in>p{margin-top:14px;font-size:12.5px;line-height:1.8;font-weight:700;color:#fff;
   text-shadow:0 1px 8px rgba(0,0,0,.7)}
 
-/* ── 丸バッジ3つ：小さく・三角に組む（上1・下2） ────────── */
-.fv .bdgs{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:20px}
-.fv .bdg-row{display:flex;justify-content:center;gap:8px}
-.fv .bdg{width:74px;aspect-ratio:1;border-radius:50%;flex:none;background:#fff;
+/* ── 丸バッジ3つ：空いている映像の余白に置く（上1・下2） ── */
+.fv .bdgs{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:42px}
+.fv .bdg-row{display:flex;justify-content:center;gap:10px}
+.fv .bdg{width:82px;aspect-ratio:1;border-radius:50%;flex:none;background:#fff;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
   padding:3px;text-align:center;
-  box-shadow:0 10px 22px -10px rgba(0,0,0,.7)}
-.fv .bdg small{font-size:8.5px;font-weight:700;color:var(--ink2);letter-spacing:-.02em;line-height:1.15}
-.fv .bdg b{font-size:13px;font-weight:900;color:var(--red);letter-spacing:-.03em;line-height:1.1}
+  box-shadow:0 10px 24px -10px rgba(0,0,0,.75)}
+.fv .bdg small{font-size:9px;font-weight:700;color:var(--ink2);letter-spacing:-.02em;line-height:1.15}
+.fv .bdg b{font-size:14px;font-weight:900;color:var(--red);letter-spacing:-.03em;line-height:1.1}
 
-.fv .slot{padding:10px 13px;margin-top:20px}
+.fv .slot{padding:10px 13px;margin-top:28px}
 .fv .slot-note{margin-top:7px}
 .fv-links{margin-top:11px}
 
 @media (max-width:360px){
-  .fv-in{padding:104px 18px 0}
-  .fv h1{font-size:27px}
-  .fv .bdg{width:64px}
+  .fv-in{padding:130px 18px 0}
+  .fv h1{font-size:28px}
+  .fv .bdg{width:70px}
   .fv .bdg small{font-size:8px}
   .fv .bdg b{font-size:12px}
 }
@@ -1686,7 +1684,7 @@ section.s.movies .cap-n{color:rgba(255,255,255,.45)}
 
     <div class="fv-in">
       <span class="fv-eyebrow">2027年度 新卒採用</span>
-      <h1><span class="bd bd-k">中四国で、</span><br><span class="bd bd-r"><em>Honda</em>と働く。</span></h1>
+      <h1>中四国で、<br><em>Honda</em>と働く。</h1>
       <p>岡山・広島・山口・香川・愛媛・高知。<br>6県のHonda販売網を担っています。</p>
 
       <div class="bdgs">
