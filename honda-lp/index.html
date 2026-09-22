@@ -1843,6 +1843,40 @@ section.s.movies .cap-n{color:rgba(255,255,255,.45)!important}
   section.s h2.t{font-size:23px!important}
   .fv h1{font-size:29px!important}
 }
+
+/* ══════════════════════════════════════════════════════
+   FV：STUDIOで組んだ形に戻す。100vh・全画面の映像・加工なし
+   ════════════════════════════════════════════════════ */
+.fv{height:100svh!important;min-height:600px!important;max-height:none!important;
+  padding:0 0 30px!important;justify-content:flex-end!important}
+.fv-video{position:absolute!important;inset:0!important;height:auto!important;
+  overflow:hidden!important;margin:0!important}
+.fv-video::after{display:none!important}
+.fv-mov{position:absolute!important;inset:0!important;left:0!important;top:0!important;
+  width:100%!important;height:100%!important;max-width:none!important;margin:0!important;
+  transform:none!important;object-fit:cover!important;object-position:center 30%!important;
+  opacity:1!important;filter:none!important}
+.fv-scrim{background:linear-gradient(180deg,
+    rgba(15,11,10,.30) 0%,
+    rgba(15,11,10,0) 12%,
+    rgba(15,11,10,0) 46%,
+    rgba(15,11,10,.30) 56%,
+    rgba(15,11,10,.66) 66%,
+    rgba(15,11,10,.86) 76%,
+    rgba(15,11,10,.94) 88%,
+    rgba(15,11,10,.97) 100%)!important}
+.fv h1{font-size:36px!important;font-weight:900!important;line-height:1.32!important;
+  letter-spacing:-.025em!important;color:#fff!important;
+  text-shadow:0 2px 24px rgba(0,0,0,.72)!important}
+.fv h1 em{font-style:normal;color:#E60020!important}
+.fv .fv-in>p{font-size:13px!important;line-height:1.8!important;
+  color:rgba(255,255,255,.88)!important;margin-top:12px!important;
+  text-shadow:0 1px 12px rgba(0,0,0,.6)!important}
+.fv-eyebrow{margin-bottom:10px!important}
+.fv .slot-tx small{display:block!important}
+.fv-act{margin:16px 16px 0!important}
+.fv-links{margin-top:11px!important}
+@media (max-width:360px){ .fv h1{font-size:30px!important} }
 </style>
 </head>
 <body>
@@ -1924,15 +1958,26 @@ section.s.movies .cap-n{color:rgba(255,255,255,.45)!important}
 
     <div class="fv-in">
       <span class="fv-eyebrow">2027年度 新卒採用</span>
-      <h1><span class="h1s">知識ゼロ・未経験から</span>
-        <span class="bd bd-k">中四国で</span><br>
-        <span class="bd bd-r">Hondaと働く。</span></h1>
+      <h1>中四国で、<br><em>Honda</em>と働く。</h1>
+      <p>岡山・広島・山口・香川・愛媛・高知。<br>6県のカーライフを、私たちが支えています。</p>
 
 
       
     </div>
 
     <div class="fv-act">
+        <div class="slot">
+          <span class="slot-dot" aria-hidden="true"></span>
+          <div class="slot-tx">
+            <b>オンライン個別面談</b>
+            <small>選考ではありません。話を聞くだけでOK</small>
+          </div>
+          <div class="slot-n">
+            <small>残り</small><b>5</b><span>名</span>
+          </div>
+        </div>
+        <p class="slot-note">※ 先着順です。公式LINEからお申し込みいただけます</p>
+
         <div class="fv-links">
           <a class="lk lk-line" href="#">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.64.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.036.194-.36.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
@@ -1957,18 +2002,6 @@ section.s.movies .cap-n{color:rgba(255,255,255,.45)!important}
     </div>
     <div class="fu-in">
 
-      <div class="slot">
-        <span class="slot-dot" aria-hidden="true"></span>
-        <div class="slot-tx">
-          <b>オンライン個別面談</b>
-          <small>選考ではありません。話を聞くだけでOK</small>
-        </div>
-        <div class="slot-n">
-          <small>残り</small><b>5</b><span>名</span>
-        </div>
-      </div>
-      <p class="slot-note">※ 先着順です。公式LINEからお申し込みいただけます</p>
-      <p class="fu-lead">岡山・広島・山口・香川・愛媛・高知。<br>6県のカーライフを、私たちが支えています。</p>
 
       <div class="bdgs">
         <div class="bdg"><small>飛び込み営業</small><b>なし</b></div>
