@@ -1742,6 +1742,30 @@ section.s.movies .cap-n{color:rgba(255,255,255,.45)}
 .fv h1 .bd-r{background:var(--red);color:#fff;margin-top:7px}
 .fv h1 .bd-r em{font-style:normal;color:#fff;background:none;padding:0;border-radius:0;
   box-shadow:none;margin:0;display:inline}
+
+/* ══════════════════════════════════════════════════════
+   PC：スマホと同じ描画に統一する
+   （PC専用の背景動画・暗い地・別パディングを全部止める）
+   ════════════════════════════════════════════════════ */
+@media (min-width:560px){
+  .bg-stage{display:none!important}
+  body,body.has-bg{background:#EFEAE6!important;background-image:none!important;
+    padding:0!important}
+  body::before,body::after{display:none!important}
+  .side,.sec-rail,.sec-mark{display:none!important}
+
+  .phone{max-width:412px;margin:0 auto;min-height:100vh;
+    border-radius:0!important;outline:0!important;
+    box-shadow:0 0 0 1px rgba(40,32,28,.08),0 0 70px rgba(40,32,28,.18)!important}
+
+  .hdr,.drawer{max-width:412px;margin:0 auto;border-radius:0}
+  .fixed{max-width:412px;margin:0 auto;left:0;right:0;bottom:0;
+    border-radius:0;border:0;
+    box-shadow:0 -1px 0 #E7E1DD,0 -6px 26px rgba(35,24,21,.10)}
+
+  section.s{padding:74px 26px 66px}
+  .qr{display:flex}
+}
 </style>
 </head>
 <body>
