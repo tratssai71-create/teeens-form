@@ -1426,9 +1426,9 @@ section.s.movies{background:#f7f4f2}
    ════════════════════════════════════════════════════ */
 
 /* ── FV：100vh・全画面の映像・加工なし ─────────────── */
-.fv{height:100svh;min-height:600px;max-height:none;
+.fv{height:calc(100svh - 88px);min-height:560px;max-height:none;
   display:flex;flex-direction:column;justify-content:flex-end;
-  padding:0 0 130px;background:#0f0b0a;position:relative;overflow:hidden}
+  padding:0 0 34px;background:#0f0b0a;position:relative;overflow:hidden}
 .fv-video{position:absolute;inset:0;margin:0;height:auto;border-radius:0;overflow:hidden;order:0}
 .fv-mov{position:absolute;inset:0;width:100%;height:100%;max-width:none;margin:0;
   transform:none;object-fit:cover;object-position:center 30%;opacity:1;filter:none}
@@ -1581,7 +1581,7 @@ section.s.movies .cap-n{color:rgba(255,255,255,.45)}
   font-size:34px;font-weight:900;letter-spacing:-.015em}
 
 @media (max-width:360px){
-  .fv{padding:0 0 124px}
+  .fv{padding:0 0 30px}
   .fv h1{font-size:30px}
   section.s{padding:62px 22px 56px}
   section.s h2.t{font-size:23px}
