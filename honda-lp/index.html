@@ -1594,6 +1594,38 @@ section.s.voices{background:#fff}
 @media (max-width:360px){
   .fv-strip{top:31.2%!important;height:10.4%!important}
 }
+
+/* ══ FV 最終構成：映像を独立したブロックにする ══════════
+   背景に敷くのをやめ、上から 映像 → 実績ストリップ → 情報 の縦積み。
+   映像は元データの 20〜40%（テロップの上）だけを切り出して表示。 */
+.fv{min-height:0!important;justify-content:flex-start!important;
+  padding:0 0 26px!important;background:#120c0a!important}
+
+.fv-video{position:relative!important;order:0!important;inset:auto!important;
+  height:246px!important;overflow:hidden!important;margin:0!important;
+  border-radius:0!important;background:#120c0a}
+.fv-mov{position:absolute!important;left:50%!important;top:0!important;
+  transform:translateX(-50%)!important;
+  width:auto!important;max-width:none!important;
+  height:1230px!important;margin-top:-246px!important;
+  object-fit:cover!important;object-position:center top!important;opacity:1!important}
+.fv-video::after{content:'';position:absolute;left:0;right:0;bottom:0;height:34%;
+  background:linear-gradient(transparent,rgba(18,12,10,.92));pointer-events:none}
+
+.fv-scrim,.fv-grid,.fv-ticks,.vig,.fv-band,.fv-sweep,
+.fv .pl,.fv .br,.fv-side,.fv-foot,.fv .glow{display:none!important}
+
+.fv-strip{position:relative!important;order:1!important;
+  top:auto!important;left:auto!important;right:auto!important;
+  height:auto!important;padding:10px 0!important;
+  border-radius:0!important;box-shadow:none!important}
+
+.fv-in{order:2!important;padding:24px 22px 0!important}
+.fv-act{order:3!important}
+@media (max-width:360px){
+  .fv-video{height:210px!important}
+  .fv-mov{height:1050px!important;margin-top:-210px!important}
+}
 </style>
 </head>
 <body>
