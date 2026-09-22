@@ -1289,8 +1289,10 @@ section.s.nums{background:linear-gradient(168deg,#CA0E15 0%,#AE0A11 54%,#8E060C 
 .last h2{line-height:1.42}
 .last h2 .l1{display:inline-block;font-size:21px;font-weight:700;
   color:rgba(255,255,255,.80);letter-spacing:.01em}
-.last h2 em{display:inline-block;margin-top:2px;color:#fff;font-style:normal;background:none;
-  font-size:34px;font-weight:900;letter-spacing:-.015em}
+.last h2 em{display:inline-block;margin-top:2px;color:#fff;font-style:normal;
+  font-size:34px;font-weight:900;letter-spacing:-.015em;
+  background:linear-gradient(120deg,#fff 0%,#ffe3e1 55%,#ffb3ad 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .last p{color:rgba(255,255,255,.88)}
 .last .ph-box.dark{border:0}
 .last .btn-red{background:#fff;color:var(--red)}
@@ -1452,7 +1454,9 @@ section.s.movies{background:#f7f4f2}
 .fv h1{margin-top:12px;font-size:34px;font-weight:900;line-height:1.28;
   letter-spacing:-.02em;color:#fff;
   text-shadow:0 2px 16px rgba(0,0,0,.7),0 1px 4px rgba(0,0,0,.9)}
-.fv h1 em{font-style:normal;color:var(--red)}
+.fv h1 em{font-style:normal;color:var(--red);
+  background:linear-gradient(120deg,#FF5A54 0%,var(--red) 45%,#8E060C 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 
 .fv .fv-in>p{margin-top:14px;font-size:12.5px;line-height:1.8;font-weight:700;color:#fff;
   text-shadow:0 1px 8px rgba(0,0,0,.7)}
@@ -1489,14 +1493,10 @@ section.s#why::before,section.s#faq::before,section.s#company::before,
 section.s.movies::before{content:'';position:absolute;left:0;right:0;top:-22px;height:22px;
   background:inherit;clip-path:polygon(0 100%,100% 0,100% 100%)}
 
-/* ── 見出し ─────────────────────────────────── */
-section.s h2.t{text-align:center;font-size:27px;font-weight:900;line-height:1.42;
-  letter-spacing:-.025em}
-section.s h2.t::before{display:none}
-section.s h2.t::after{content:'';display:block;width:40px;height:4px;border-radius:99px;
-  background:var(--red);margin:18px auto 0}
-section.s.nums h2.t::after,section.s.movies h2.t::after{background:#fff}
-section.s>p.body{text-align:center;font-size:13.5px;line-height:2;margin:16px auto 0;max-width:320px}
+/* ── 見出し：左揃え＋短いダッシュ（元の版面に戻す） ──────── */
+section.s h2.t{text-align:left;font-size:26px;font-weight:900;line-height:1.42;
+  letter-spacing:-.02em}
+section.s>p.body{text-align:left;font-size:13.5px;line-height:1.9;margin-top:14px;max-width:none}
 section.s.movies h2.t{color:#fff}
 section.s.movies>p.body{color:rgba(255,255,255,.7)}
 section.s.movies .cap-n{color:rgba(255,255,255,.45)}
@@ -1583,8 +1583,10 @@ section.s.movies .cap-n{color:rgba(255,255,255,.45)}
 .last h2{line-height:1.42}
 .last h2 .l1{display:inline-block;font-size:21px;font-weight:700;
   color:rgba(255,255,255,.80);letter-spacing:.01em}
-.last h2 em{display:inline-block;margin-top:2px;color:#fff;font-style:normal;background:none;
-  font-size:34px;font-weight:900;letter-spacing:-.015em}
+.last h2 em{display:inline-block;margin-top:2px;color:#fff;font-style:normal;
+  font-size:34px;font-weight:900;letter-spacing:-.015em;
+  background:linear-gradient(120deg,#fff 0%,#ffe3e1 55%,#ffb3ad 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 
 @media (max-width:360px){
   .fv{padding:0 0 30px}
