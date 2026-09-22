@@ -1741,6 +1741,19 @@ section.s.nums h2.t::after{background:#fff}
 .car-dots{display:flex;gap:7px}
 .car-dots i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:.2s ease}
 .car-dots i.on{background:var(--red);width:20px;border-radius:999px}
+
+/* ── FV 微調整：クライアント側ロゴを切り、CTAを固定バーから逃がす ── */
+.fv{padding:0 0 106px!important}
+.fv-mov{top:-12%!important;height:168%!important}
+.fv-scrim{background:linear-gradient(180deg,
+    rgba(15,11,10,.46) 0%,
+    rgba(15,11,10,.05) 10%,
+    rgba(15,11,10,.05) 40%,
+    rgba(15,11,10,.46) 47%,
+    rgba(15,11,10,.92) 53%,
+    rgba(15,11,10,1) 58%,
+    rgba(15,11,10,1) 100%)!important}
+@media (max-width:360px){ .fv{padding:0 0 100px!important} }
 </style>
 </head>
 <body>
