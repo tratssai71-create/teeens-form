@@ -1594,6 +1594,31 @@ section.s.movies .cap-n{color:rgba(255,255,255,.45)}
   .fx-mc span{font-size:10px;padding:0 9px}
   .ba{flex-wrap:wrap;gap:5px}
 }
+
+/* ── FVの丸バッジ（映像の上に重ねる） ─────────────── */
+.fv .bdgs{display:flex;gap:10px;margin-top:20px}
+.fv .bdg{flex:1;aspect-ratio:1;border-radius:50%;background:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  padding:4px;text-align:center;
+  box-shadow:0 14px 30px -10px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.5)}
+.fv .bdg:nth-child(1){transform:rotate(-3deg)}
+.fv .bdg:nth-child(3){transform:rotate(3deg)}
+.fv .bdg small{font-size:10.5px;font-weight:700;color:var(--ink2);
+  letter-spacing:-.02em;line-height:1.2}
+.fv .bdg b{font-size:18px;font-weight:900;color:var(--red);
+  letter-spacing:-.03em;line-height:1.05}
+.fv .fv-in>p{margin-top:11px}
+.fv-act{margin-top:18px}
+
+/* FV直下は信頼バーだけに */
+.fu-in{padding:22px 22px 30px}
+.trust{margin-top:0}
+
+@media (max-width:360px){
+  .fv .bdgs{gap:8px;margin-top:16px}
+  .fv .bdg small{font-size:9.5px}
+  .fv .bdg b{font-size:15px}
+}
 </style>
 </head>
 <body>
@@ -1677,6 +1702,12 @@ section.s.movies .cap-n{color:rgba(255,255,255,.45)}
       <span class="fv-eyebrow">2027年度 新卒採用</span>
       <h1>中四国で、<br><em>Honda</em>と働く。</h1>
       <p>岡山・広島・山口・香川・愛媛・高知。<br>6県のカーライフを、私たちが支えています。</p>
+      <div class="bdgs">
+        <div class="bdg"><small>訪問営業は</small><b>ナシ</b></div>
+        <div class="bdg"><small>クルマの知識</small><b>ゼロOK</b></div>
+        <div class="bdg"><small>年間休日</small><b>120日</b></div>
+      </div>
+
 
 
       
@@ -1720,8 +1751,6 @@ section.s.movies .cap-n{color:rgba(255,255,255,.45)}
     <div class="fu-in">
 
 
-      <div class="bdgs">
-        <div class="bdg"><small>飛び込み営業</small><b>なし</b></div>
         <div class="bdg"><small>クルマの知識</small><b>ゼロOK</b></div>
         <div class="bdg"><small>年間休日</small><b>120日</b></div>
       </div>
