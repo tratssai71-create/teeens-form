@@ -1765,6 +1765,84 @@ section.s.nums h2.t::after{background:#fff}
     rgba(15,11,10,.97) 50%,
     rgba(15,11,10,1) 54%,
     rgba(15,11,10,1) 100%)!important}
+
+/* ══════════════════════════════════════════════════════
+   全面リスキン ── 広告LPの密度と強さに寄せる
+   ════════════════════════════════════════════════════ */
+
+/* ── FV：映像を6割まで伸ばす ───────────────────────── */
+.fv{height:calc(100svh - 33px)!important;min-height:600px!important;max-height:940px!important;
+  padding:0 0 104px!important}
+.fv-mov{top:-16%!important;height:200%!important}
+.fv-scrim{background:linear-gradient(180deg,
+    rgba(15,11,10,.46) 0%,
+    rgba(15,11,10,.03) 11%,
+    rgba(15,11,10,.03) 44%,
+    rgba(15,11,10,.16) 52%,
+    rgba(15,11,10,.52) 59%,
+    rgba(15,11,10,.90) 65%,
+    rgba(15,11,10,.99) 70%,
+    rgba(15,11,10,1) 75%,
+    rgba(15,11,10,1) 100%)!important}
+.fv h1{font-size:34px!important}
+.fv-act{margin:15px 16px 0!important}
+
+/* ── 面の構成：4色を循環させる ───────────────────────── */
+section.s{padding:74px 26px 66px!important;position:relative}
+section.s.voices{background:#fff!important}
+section.s.movies{background:#1a1211!important}
+section.s#why{background:#FBF4F3!important}
+section.s#conditions{background:#fff!important}
+section.s#faq{background:#FBF4F3!important}
+section.s#flow{background:#fff!important}
+section.s#company{background:#FBF4F3!important}
+
+/* 斜めの切り替え */
+section.s#why::before,section.s#faq::before,section.s#company::before{
+  content:'';position:absolute;left:0;right:0;top:-22px;height:22px;
+  background:#FBF4F3;clip-path:polygon(0 100%,100% 0,100% 100%)}
+section.s.movies::before{content:'';position:absolute;left:0;right:0;top:-22px;height:22px;
+  background:#1a1211;clip-path:polygon(0 100%,100% 0,100% 100%)}
+
+/* ── 見出し：太く・大きく・中央 ─────────────────────── */
+section.s h2.t{font-size:27px!important;font-weight:900!important;line-height:1.42!important;
+  letter-spacing:-.025em!important}
+section.s h2.t::after{width:40px!important;height:4px!important;margin-top:18px!important;
+  border-radius:99px!important}
+section.s>p.body{font-size:13.5px!important;line-height:2!important;margin-top:16px!important;
+  max-width:320px!important}
+section.s.movies h2.t{color:#fff!important}
+section.s.movies>p.body{color:rgba(255,255,255,.7)!important}
+section.s.movies .cap-n{color:rgba(255,255,255,.45)!important}
+
+/* ── カード：厚く、丸く、浮かせる ───────────────────── */
+.rc,.vc,.mv{border-radius:20px!important}
+.rc{padding:24px 20px 22px!important;box-shadow:0 18px 40px -22px rgba(35,24,21,.38)!important}
+.vc{background:#FBF4F3!important;box-shadow:0 14px 34px -22px rgba(35,24,21,.34)!important}
+.mv{border-color:rgba(255,255,255,.12)!important;background:#241a19!important}
+.mv-t{color:#fff!important}
+.mv-d{color:rgba(255,255,255,.62)!important}
+
+/* ── 番号：大きく、斜体、ふち文字 ───────────────────── */
+.rc .n{font-size:60px!important;left:14px!important;bottom:-2px!important;
+  color:#fff!important;-webkit-text-stroke:0!important;
+  text-shadow:0 3px 20px rgba(0,0,0,.75)!important}
+.rc .n::after{font-size:30px!important;opacity:.45!important}
+
+/* ── 動画カルーセルを黒地に馴染ませる ─────────────── */
+.car-ar{background:rgba(255,255,255,.1)!important;border-color:rgba(255,255,255,.22)!important}
+.car-ar::after{border-color:#fff!important}
+.car-dots i{background:rgba(255,255,255,.26)!important}
+.car-dots i.on{background:var(--red)!important}
+
+/* ── B/Aチップを太く ─────────────────────────────── */
+.ba span{font-size:11px!important;padding:6px 10px!important;border-radius:8px!important}
+
+@media (max-width:360px){
+  section.s{padding:62px 22px 56px!important}
+  section.s h2.t{font-size:23px!important}
+  .fv h1{font-size:29px!important}
+}
 </style>
 </head>
 <body>
@@ -1855,17 +1933,6 @@ section.s.nums h2.t::after{background:#fff}
     </div>
 
     <div class="fv-act">
-        <div class="slot">
-          <span class="slot-dot" aria-hidden="true"></span>
-          <div class="slot-tx">
-            <b>オンライン個別面談</b>
-            <small>選考ではありません。話を聞くだけでOK</small>
-          </div>
-          <div class="slot-n">
-            <small>残り</small><b>5</b><span>名</span>
-          </div>
-        </div>
-        <p class="slot-note">※ 先着順です。公式LINEからお申し込みいただけます</p>
         <div class="fv-links">
           <a class="lk lk-line" href="#">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.64.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.036.194-.36.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
@@ -1889,6 +1956,18 @@ section.s.nums h2.t::after{background:#fff}
       </div>
     </div>
     <div class="fu-in">
+
+      <div class="slot">
+        <span class="slot-dot" aria-hidden="true"></span>
+        <div class="slot-tx">
+          <b>オンライン個別面談</b>
+          <small>選考ではありません。話を聞くだけでOK</small>
+        </div>
+        <div class="slot-n">
+          <small>残り</small><b>5</b><span>名</span>
+        </div>
+      </div>
+      <p class="slot-note">※ 先着順です。公式LINEからお申し込みいただけます</p>
       <p class="fu-lead">岡山・広島・山口・香川・愛媛・高知。<br>6県のカーライフを、私たちが支えています。</p>
 
       <div class="bdgs">
