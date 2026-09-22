@@ -1729,6 +1729,19 @@ section.s.movies .cap-n{color:rgba(255,255,255,.45)}
   .fv .bdg small{font-size:9px}
   .fv .bdg b{font-size:14px}
 }
+
+/* ── 見出しは箱で囲う。背景が何であっても読める（参考サイト準拠）── */
+.fv-eyebrow{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(12,9,8,.72);padding:5px 12px 6px;border-radius:7px;
+  backdrop-filter:blur(2px);margin-bottom:12px}
+.fv h1{text-shadow:none}
+.fv h1 .bd{display:inline-block;padding:3px 13px 7px;border-radius:8px;
+  text-shadow:none;box-shadow:0 10px 26px -10px rgba(0,0,0,.9)}
+.fv h1 .bd-k{background:rgba(14,10,9,.9);color:#fff;
+  box-shadow:0 10px 26px -10px rgba(0,0,0,.95),inset 0 0 0 1px rgba(255,255,255,.12)}
+.fv h1 .bd-r{background:var(--red);color:#fff;margin-top:7px}
+.fv h1 .bd-r em{font-style:normal;color:#fff;background:none;padding:0;border-radius:0;
+  box-shadow:none;margin:0;display:inline}
 </style>
 </head>
 <body>
@@ -1810,7 +1823,7 @@ section.s.movies .cap-n{color:rgba(255,255,255,.45)}
 
     <div class="fv-in">
       <span class="fv-eyebrow">2027年度 新卒採用</span>
-      <h1>中四国で、<br><em>Honda</em>と働く。</h1>
+      <h1><span class="bd bd-k">中四国で、</span><br><span class="bd bd-r"><em>Honda</em>と働く。</span></h1>
       <div class="bdgs">
         <div class="bdg"><small>訪問営業は</small><b>ナシ</b></div>
         <div class="bdg"><small>クルマの知識</small><b>ゼロOK</b></div>
