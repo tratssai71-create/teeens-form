@@ -1473,6 +1473,20 @@ section.s.movies{background:#f7f4f2}
   .ba{flex-wrap:wrap;gap:5px}
   .ba span{font-size:10px;padding:4px 8px}
 }
+
+/* ══ FV：情報量が増えたぶん、映像を沈める ══════════════ */
+.fv{min-height:812px!important}
+.fv-mov{object-position:center 12%!important;filter:saturate(.85) contrast(1.04)}
+.fv-scrim{background:linear-gradient(180deg,
+    rgba(15,11,10,.62) 0%,
+    rgba(15,11,10,.30) 9%,
+    rgba(15,11,10,.52) 17%,
+    rgba(15,11,10,.84) 26%,
+    rgba(15,11,10,.94) 36%,
+    rgba(15,11,10,.97) 50%,
+    rgba(15,11,10,.99) 100%)!important}
+.fv-in{padding-top:6px}
+@media (max-width:360px){ .fv{min-height:760px!important} }
 </style>
 </head>
 <body>
