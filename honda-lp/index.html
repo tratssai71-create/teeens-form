@@ -1426,7 +1426,8 @@ section.s.movies{background:#f7f4f2}
    ════════════════════════════════════════════════════ */
 
 /* ── FV：100vh・全画面の映像・加工なし ─────────────── */
-.fv{height:calc(100svh - 88px);min-height:560px;max-height:none;
+/* 88px=固定CTAバー / 30px=モックの DESIGN DRAFT 帯（STUDIOでは不要） */
+.fv{height:calc(100svh - 88px - 30px);min-height:540px;max-height:none;
   display:flex;flex-direction:column;justify-content:flex-end;
   padding:0 0 34px;background:#0f0b0a;position:relative;overflow:hidden}
 .fv-video{position:absolute;inset:0;margin:0;height:auto;border-radius:0;overflow:hidden;order:0}
