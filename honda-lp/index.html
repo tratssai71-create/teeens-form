@@ -1453,41 +1453,32 @@ section.s.movies{background:#f7f4f2}
 .fv h1 .bd{display:inline-block;padding:6px 13px 9px;border-radius:6px;
   box-shadow:4px 4px 0 rgba(0,0,0,.28)}
 .fv h1 .bd-k{background:#141414;color:#fff}
-.fv h1 .bd-r{background:var(--red);color:#fff;margin-top:8px;display:block}
+.fv h1 .bd-r{background:var(--red);color:#fff;margin-top:8px}
 .fv h1 .bd-r em{font-style:normal;color:#fff}
 
 .fv .fv-in>p{margin-top:14px;font-size:12.5px;line-height:1.8;font-weight:700;color:#fff;
   text-shadow:0 1px 8px rgba(0,0,0,.7)}
 
-/* ── サムネイルグリッド（実写真） ───────────────────── */
-.fv-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:16px}
-.fv-th{position:relative;aspect-ratio:1;border-radius:6px;overflow:hidden;
-  background-size:cover;background-position:center}
-.fv-th::after{content:'';position:absolute;inset:0;
-  background:linear-gradient(transparent 45%,rgba(0,0,0,.62))}
-.fv-th span{position:absolute;left:5px;bottom:4px;z-index:1;font-size:10px;font-weight:700;
-  color:#fff}
-
-/* ── 丸バッジ3つ ─────────────────────────────────── */
-.fv .bdgs{display:flex;justify-content:center;gap:9px;margin-top:16px}
-.fv .bdg{width:31%;aspect-ratio:1;border-radius:50%;flex:none;background:#fff;
+/* ── 丸バッジ3つ：小さく・三角に組む（上1・下2） ────────── */
+.fv .bdgs{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:20px}
+.fv .bdg-row{display:flex;justify-content:center;gap:8px}
+.fv .bdg{width:74px;aspect-ratio:1;border-radius:50%;flex:none;background:#fff;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
-  padding:4px;text-align:center;
-  box-shadow:0 12px 26px -10px rgba(0,0,0,.7)}
-.fv .bdg small{font-size:10px;font-weight:700;color:var(--ink2);letter-spacing:-.02em;line-height:1.2}
-.fv .bdg b{font-size:16px;font-weight:900;color:var(--red);letter-spacing:-.03em;line-height:1.1}
+  padding:3px;text-align:center;
+  box-shadow:0 10px 22px -10px rgba(0,0,0,.7)}
+.fv .bdg small{font-size:8.5px;font-weight:700;color:var(--ink2);letter-spacing:-.02em;line-height:1.15}
+.fv .bdg b{font-size:13px;font-weight:900;color:var(--red);letter-spacing:-.03em;line-height:1.1}
 
-.fv .slot{padding:10px 13px}
+.fv .slot{padding:10px 13px;margin-top:20px}
 .fv .slot-note{margin-top:7px}
 .fv-links{margin-top:11px}
 
 @media (max-width:360px){
   .fv-in{padding:104px 18px 0}
   .fv h1{font-size:27px}
-  .fv-thumbs{gap:3px}
-  .fv-th span{font-size:9px}
-  .fv .bdg small{font-size:9px}
-  .fv .bdg b{font-size:14px}
+  .fv .bdg{width:64px}
+  .fv .bdg small{font-size:8px}
+  .fv .bdg b{font-size:12px}
 }
 
 
@@ -1698,21 +1689,12 @@ section.s.movies .cap-n{color:rgba(255,255,255,.45)}
       <h1><span class="bd bd-k">中四国で、</span><br><span class="bd bd-r"><em>Honda</em>と働く。</span></h1>
       <p>岡山・広島・山口・香川・愛媛・高知。<br>6県のHonda販売網を担っています。</p>
 
-      <div class="fv-thumbs">
-        <div class="fv-th" style="background-image:url('img/hp/opt/works1.jpg')"><span>営業職</span></div>
-        <div class="fv-th" style="background-image:url('img/hp/opt/shimamoto.jpg')"><span>サービス職</span></div>
-        <div class="fv-th" style="background-image:url('img/hp/opt/fujimori.jpg')"><span>業務職</span></div>
-        <div class="fv-th" style="background-image:url('img/hp/opt/watanabe.jpg')"><span>店舗</span></div>
-        <div class="fv-th" style="background-image:url('img/hp/opt/hara.jpg')"><span>岡山</span></div>
-        <div class="fv-th" style="background-image:url('img/hp/opt/okawa.jpg')"><span>広島</span></div>
-        <div class="fv-th" style="background-image:url('img/hp/opt/tsuruhara.jpg')"><span>香川</span></div>
-        <div class="fv-th" style="background-image:url('img/hp/opt/shibata.jpg')"><span>愛媛</span></div>
-      </div>
-
       <div class="bdgs">
-        <div class="bdg"><small>訪問営業は</small><b>ナシ</b></div>
-        <div class="bdg"><small>年間休日</small><b>120日</b></div>
-        <div class="bdg"><small>クルマの知識</small><b>ゼロOK</b></div>
+        <div class="bdg bdg-top"><small>クルマの知識</small><b>ゼロOK</b></div>
+        <div class="bdg-row">
+          <div class="bdg"><small>訪問営業は</small><b>ナシ</b></div>
+          <div class="bdg"><small>年間休日</small><b>120日</b></div>
+        </div>
       </div>
     </div>
 
