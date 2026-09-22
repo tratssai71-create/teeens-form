@@ -1626,6 +1626,43 @@ section.s.voices{background:#fff}
   .fv-video{height:210px!important}
   .fv-mov{height:1050px!important;margin-top:-210px!important}
 }
+
+/* ══ FV 再構成：全画面の映像に戻す ══════════════════════
+   バッジ・信頼バーはFVの外へ出し、映像の面積を確保。
+   映像は元データの 6.7〜73% を表示（テロップ帯 40〜46% は下部の膜で沈む） */
+.fv{min-height:900px!important;justify-content:flex-end!important;
+  padding:0 0 26px!important;background:#0f0b0a!important;position:relative}
+
+.fv-video{position:absolute!important;inset:0!important;order:0!important;
+  height:auto!important;overflow:hidden!important;margin:0!important;border-radius:0!important}
+.fv-video::after{display:none!important}
+.fv-mov{position:absolute!important;left:50%!important;top:-10%!important;
+  transform:translateX(-50%)!important;margin-top:0!important;
+  width:auto!important;max-width:none!important;height:150%!important;
+  object-fit:cover!important;object-position:center top!important;opacity:1!important}
+
+.fv-scrim{display:block!important;position:absolute!important;inset:0!important;z-index:1;
+  pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(15,11,10,.44) 0%,
+    rgba(15,11,10,.06) 9%,
+    rgba(15,11,10,.06) 40%,
+    rgba(15,11,10,.40) 47%,
+    rgba(15,11,10,.88) 55%,
+    rgba(15,11,10,.98) 62%,
+    rgba(15,11,10,1) 70%,
+    rgba(15,11,10,1) 100%)!important}
+
+.fv-in{order:1!important;position:relative;z-index:3;padding:0 22px 0!important}
+.fv-act{order:2!important;position:relative;z-index:3}
+
+/* ── FV直下のブロック ───────────────────────── */
+.fv-under{background:#0f0b0a;position:relative}
+.fv-strip{position:relative!important;top:auto!important;left:auto!important;right:auto!important;
+  height:auto!important;padding:11px 0!important;border-radius:0!important;
+  box-shadow:none!important;border-top:1px solid rgba(255,255,255,.1)!important}
+.fu-in{padding:22px 22px 30px}
+.fu-in .bdgs{margin-top:0}
 </style>
 </head>
 <body>
@@ -1705,15 +1742,6 @@ section.s.voices{background:#fff}
     <span class="fv-side">6 PREFECTURES ／ 75 SHOPS</span>
     <span class="fv-foot">RECRUIT 2027</span>
 
-    <div class="fv-strip" aria-hidden="true">
-      <div class="fv-strip-in">
-        <span><i>本田技研</i>100%出資</span><span>中四国<i>6</i>県</span><span>従業員<i>1,711</i>名</span>
-        <span>創業<i>48</i>年</span><span>離職率<i>3.95</i>%</span><span>年間休日<i>120</i>日</span>
-        <span><i>本田技研</i>100%出資</span><span>中四国<i>6</i>県</span><span>従業員<i>1,711</i>名</span>
-        <span>創業<i>48</i>年</span><span>離職率<i>3.95</i>%</span><span>年間休日<i>120</i>日</span>
-      </div>
-    </div>
-
     <div class="fv-in">
       <span class="fv-eyebrow">2027年度 新卒採用</span>
       <h1><span class="h1s">知識ゼロ・未経験から</span>
@@ -1721,17 +1749,6 @@ section.s.voices{background:#fff}
         <span class="bd bd-r">Hondaと働く。</span></h1>
       <p>岡山・広島・山口・香川・愛媛・高知。6県のカーライフを、私たちが支えています。</p>
 
-      <div class="bdgs">
-        <div class="bdg"><small>飛び込み営業</small><b>なし</b></div>
-        <div class="bdg"><small>クルマの知識</small><b>ゼロOK</b></div>
-        <div class="bdg"><small>年間休日</small><b>120日</b></div>
-      </div>
-
-      <div class="trust">
-        <span><i>本田技研工業</i>100%出資</span>
-        <span><i>1,711</i>名</span>
-        <span>中四国<i>6</i>県</span>
-      </div>
 
       
     </div>
@@ -1758,6 +1775,31 @@ section.s.voices{background:#fff}
           </a>
         </div>
       </div>
+  </div>
+
+  <!-- FV直下：実績ストリップ＋バッジ -->
+  <div class="fv-under">
+    <div class="fv-strip" aria-hidden="true">
+      <div class="fv-strip-in">
+        <span><i>本田技研</i>100%出資</span><span>中四国<i>6</i>県</span><span>従業員<i>1,711</i>名</span>
+        <span>創業<i>48</i>年</span><span>離職率<i>3.95</i>%</span><span>年間休日<i>120</i>日</span>
+        <span><i>本田技研</i>100%出資</span><span>中四国<i>6</i>県</span><span>従業員<i>1,711</i>名</span>
+        <span>創業<i>48</i>年</span><span>離職率<i>3.95</i>%</span><span>年間休日<i>120</i>日</span>
+      </div>
+    </div>
+    <div class="fu-in">
+      <div class="bdgs">
+        <div class="bdg"><small>飛び込み営業</small><b>なし</b></div>
+        <div class="bdg"><small>クルマの知識</small><b>ゼロOK</b></div>
+        <div class="bdg"><small>年間休日</small><b>120日</b></div>
+      </div>
+
+      <div class="trust">
+        <span><i>本田技研工業</i>100%出資</span>
+        <span><i>1,711</i>名</span>
+        <span>中四国<i>6</i>県</span>
+      </div>
+    </div>
   </div>
 
   <!-- 数字 -->
