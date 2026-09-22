@@ -1644,6 +1644,24 @@ section.s.movies .cap-n{color:rgba(255,255,255,.45)}
     rgba(15,11,10,.99) 42%,
     rgba(15,11,10,1) 48%,
     rgba(15,11,10,1) 100%)}
+
+/* ── FV：文字の下は不透明な面。映像はその上で素通し ──
+   テロップは再生中に位置が動くため、グラデーションでは追えない。
+   面を敷いて、その上端までを映像の見せ場にする。 */
+.fv-scrim{background:linear-gradient(180deg,
+    rgba(15,11,10,.38) 0%,
+    rgba(15,11,10,.06) 9%,
+    rgba(15,11,10,.06) 100%)}
+.fv-in{background:#120c0a;padding:26px 22px 0;position:relative}
+.fv-in::before{content:'';position:absolute;left:0;right:0;bottom:100%;height:104px;
+  background:linear-gradient(rgba(18,12,10,0),rgba(18,12,10,.72) 46%,#120c0a);
+  pointer-events:none}
+.fv-act{background:#120c0a;margin:0;padding:18px 16px 0}
+.fv .bdgs{margin-top:22px}
+@media (max-width:360px){
+  .fv-in{padding:22px 18px 0}
+  .fv-act{padding:16px 14px 0}
+}
 </style>
 </head>
 <body>
