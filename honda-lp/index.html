@@ -1663,6 +1663,84 @@ section.s.voices{background:#fff}
   box-shadow:none!important;border-top:1px solid rgba(255,255,255,.1)!important}
 .fu-in{padding:22px 22px 30px}
 .fu-in .bdgs{margin-top:0}
+
+/* ══════════════════════════════════════════════════════
+   参考サイト（DMM生成AI CAMP）の型に合わせた全体調整
+   ════════════════════════════════════════════════════ */
+
+/* ── FV：100vh に収め、映像の面積を最大化 ───────────── */
+.fv{height:100svh!important;min-height:620px!important;max-height:980px!important;
+  justify-content:flex-end!important;padding:0 0 92px!important;background:#0f0b0a!important}
+.fv-mov{top:0!important;height:155%!important}
+.fv-scrim{background:linear-gradient(180deg,
+    rgba(15,11,10,.44) 0%,
+    rgba(15,11,10,.05) 9%,
+    rgba(15,11,10,.05) 42%,
+    rgba(15,11,10,.44) 49%,
+    rgba(15,11,10,.90) 55%,
+    rgba(15,11,10,.99) 60%,
+    rgba(15,11,10,1) 66%,
+    rgba(15,11,10,1) 100%)!important}
+.fv h1{font-size:32px!important;line-height:1.3!important;margin:0!important}
+.fv h1 .h1s{font-size:15px!important;margin-bottom:8px!important}
+.fv h1 .bd{padding:2px 10px 5px!important}
+.fv h1 .bd-r{margin-top:6px!important}
+.fv-eyebrow{margin-bottom:11px!important}
+.fv-act{margin:13px 16px 0!important}
+.fv .slot{padding:9px 13px!important}
+.fv .slot-tx small{display:none}
+.fv .slot-note{margin-top:6px!important}
+.fv-links{margin-top:10px!important}
+
+/* ── FV直下ブロック ──────────────────────────── */
+.fu-lead{font-size:13px;line-height:1.85;color:rgba(255,255,255,.72);
+  text-align:center;margin-bottom:20px}
+
+/* ── 見出し：中央揃え＋下に区切り線（参考サイト準拠）── */
+section.s h2.t{text-align:center;font-size:24px;line-height:1.5}
+section.s h2.t::before{display:none}
+section.s h2.t::after{content:'';display:block;width:56px;height:2px;
+  background:var(--red);margin:16px auto 0;border-radius:2px}
+section.s>p.body{text-align:center;max-width:330px;margin-left:auto;margin-right:auto}
+section.s.nums h2.t::after{background:#fff}
+
+/* ── 理由カードの番号：斜体＋スラッシュ ───────────── */
+.rc .n{font-style:italic;letter-spacing:-.02em}
+.rc .n::after{content:'/';font-size:26px;margin-left:3px;opacity:.5;font-style:italic}
+
+/* ── 固定バー：上にマイクロコピー ────────────────── */
+.fixed{flex-direction:column!important;gap:0!important;
+  padding:6px 8px calc(10px + env(safe-area-inset-bottom))!important}
+.fx-mc{display:flex;justify-content:center;gap:16px;margin-bottom:5px}
+.fx-mc span{font-size:10.5px;font-weight:700;color:var(--ink2);letter-spacing:-.01em;
+  position:relative;padding:0 11px}
+.fx-mc span::before,.fx-mc span::after{content:'';position:absolute;top:2px;bottom:2px;
+  width:1px;background:var(--ink3);opacity:.6}
+.fx-mc span::before{left:0;transform:rotate(-18deg)}
+.fx-mc span::after{right:0;transform:rotate(18deg)}
+.fx-btns{display:flex;gap:7px;width:100%}
+
+@media (max-width:360px){
+  .fv h1{font-size:28px!important}
+  .fv h1 .h1s{font-size:13.5px!important}
+  section.s h2.t{font-size:21px}
+  .fx-mc span{font-size:10px;padding:0 9px}
+}
+
+/* ══ 動画：カルーセル（矢印＋ドット） ══════════════════ */
+.car-ui{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:6px}
+.car-ar{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);
+  background:#fff;cursor:pointer;position:relative;flex:none;
+  box-shadow:0 4px 14px -8px rgba(35,24,21,.5);transition:.18s ease}
+.car-ar::after{content:'';position:absolute;left:50%;top:50%;width:8px;height:8px;
+  border-left:2px solid var(--ink);border-bottom:2px solid var(--ink);
+  transform:translate(-40%,-50%) rotate(45deg)}
+.car-next::after{transform:translate(-60%,-50%) rotate(-135deg)}
+.car-ar:hover{background:var(--red);border-color:var(--red)}
+.car-ar:hover::after{border-color:#fff}
+.car-dots{display:flex;gap:7px}
+.car-dots i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:.2s ease}
+.car-dots i.on{background:var(--red);width:20px;border-radius:999px}
 </style>
 </head>
 <body>
@@ -1747,7 +1825,6 @@ section.s.voices{background:#fff}
       <h1><span class="h1s">知識ゼロ・未経験から</span>
         <span class="bd bd-k">中四国で</span><br>
         <span class="bd bd-r">Hondaと働く。</span></h1>
-      <p>岡山・広島・山口・香川・愛媛・高知。6県のカーライフを、私たちが支えています。</p>
 
 
       
@@ -1788,6 +1865,8 @@ section.s.voices{background:#fff}
       </div>
     </div>
     <div class="fu-in">
+      <p class="fu-lead">岡山・広島・山口・香川・愛媛・高知。<br>6県のカーライフを、私たちが支えています。</p>
+
       <div class="bdgs">
         <div class="bdg"><small>飛び込み営業</small><b>なし</b></div>
         <div class="bdg"><small>クルマの知識</small><b>ゼロOK</b></div>
@@ -2093,6 +2172,11 @@ section.s.voices{background:#fff}
         <p class="mv-d">社内の雰囲気、同期との関係、ノルマのこと。</p></div>
       </div>
     </div>
+    <div class="car-ui">
+      <button class="car-ar" type="button" data-dir="-1" aria-label="前へ"></button>
+      <div class="car-dots"><i class="on"></i><i></i><i></i><i></i></div>
+      <button class="car-ar car-next" type="button" data-dir="1" aria-label="次へ"></button>
+    </div>
     <p class="cap-n">※ 音が出ます</p>
   </section>
   <!-- FAQ -->
@@ -2194,8 +2278,11 @@ section.s.voices{background:#fff}
 
   <!-- 固定CTA -->
   <div class="fixed">
+    <p class="fx-mc"><span>選考ではありません</span><span>30秒で完了</span></p>
+    <div class="fx-btns">
     <a class="btn btn-line" href="#"><svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.64.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.036.194-.36.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg><span class="lbl">LINEで相談<small>友だち追加</small></span></a>
     <a class="btn btn-red" href="#">エントリー</a>
+    </div>
   </div>
 
 </div>
@@ -2440,6 +2527,26 @@ Metaピクセルは、Meta側で発行されるコードをそのまま貼り付
   });
 })();
 
+
+/* ══ 動画カルーセル ══════════════════════════════════ */
+(function(){
+  var row = document.querySelector('.mv-grid');
+  if(!row) return;
+  var dots = document.querySelectorAll('.car-dots i');
+  var cards = row.querySelectorAll('.mv');
+  function step(d){
+    var w = cards[0].getBoundingClientRect().width + 12;
+    row.scrollBy({left:w*d, behavior:'smooth'});
+  }
+  document.querySelectorAll('.car-ar').forEach(function(b){
+    b.addEventListener('click', function(){ step(+b.dataset.dir); });
+  });
+  row.addEventListener('scroll', function(){
+    var w = cards[0].getBoundingClientRect().width + 12;
+    var i = Math.round(row.scrollLeft / w);
+    dots.forEach(function(d,n){ d.classList.toggle('on', n===i); });
+  }, {passive:true});
+})();
 </script>
 </body>
 </html>
